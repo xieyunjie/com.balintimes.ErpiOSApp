@@ -117,6 +117,7 @@ struct RequestApi{
             
             }) { (err) -> Void in
                 print(err?.code);
+                
                 if let f = failure{
                     f(err);
                 }

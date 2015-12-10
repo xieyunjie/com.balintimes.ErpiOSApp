@@ -67,12 +67,13 @@ class CityPickerViewController: DataPickerViewController,UIPickerViewDelegate,UI
             self.pickerView(self.dataPicker, didSelectRow: 0, inComponent: 0);
             
             }) { (err) -> Void in
+                MBProgressHUD.hideHUDForView(self.view, animated: true);
                 let alert = DlgMsg.alertWebError({ (action:UIAlertAction) -> Void in
                     
                     
                     }, message: nil);
                 
-                self.parentViewController?.presentViewController(alert, animated: true, completion: { () -> Void in
+                self.presentViewController(alert, animated: true, completion: { () -> Void in
                     self.hide();
                 })
                 
@@ -138,7 +139,7 @@ class CityPickerViewController: DataPickerViewController,UIPickerViewDelegate,UI
                     self.dataPicker.selectRow(0, inComponent: 1, animated: true);
                     
                     }) { (err) -> Void in
-                        
+                        MBProgressHUD.hideHUDForView(self.view, animated: true);
                         let alert = DlgMsg.alertWebError({ (action:UIAlertAction) -> Void in
                             
                             
