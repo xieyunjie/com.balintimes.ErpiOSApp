@@ -35,6 +35,19 @@ class CRMDemoViewController: UIViewController,UINavigationControllerDelegate,UII
         }
         return true;
     }
+    @IBAction func btnShowHUBClick(sender: AnyObject) {
+//        BlockMsg.showDuring(self.view!) { () -> Void in
+//            print("complete");
+//        }
+        
+//        BlockMsg.showText(self.view!, msg: "提示啥？？", afterDelay: 2.0);
+        BlockMsg.showText(self.view!, msg: "这个是提示", executAction: { () -> Void in
+            sleep(2);
+            print("execution");
+            }) { () -> Void in
+                print("complete");
+        }
+    }
     
     private var _cityPickerView:CityPickerViewController?;
     private var cityPickerView:CityPickerViewController{

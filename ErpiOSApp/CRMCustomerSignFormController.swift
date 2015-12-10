@@ -7,6 +7,7 @@
 //
 
 import UIKit
+
 protocol CRMCustomerSignFormControllerDelegate{
     func formRequireFieldCheck(finish:Bool);
 }
@@ -91,19 +92,13 @@ class CRMCustomerSignFormController: UITableViewController,UITextFieldDelegate {
     }
     func textFieldShouldBeginEditing(textField: UITextField) -> Bool {
         if textField == self.txtCustomerRegion{
-            print("Should Editing");
-            
             self.cityPicker.show(self.parentViewController!, textField, successAction: self.txtCustomerRegionSuccess,cancelAction: nil);
         }
         return true;
     }
-    @IBAction func txtCustomerRegionTouchDown(sender: AnyObject) {
-        
-        print("touch down");
-        
-//        self.cityPicker.show(self.parentViewController!, sender, successAction: self.txtCustomerRegionSuccess,cancelAction: nil);
-    }
     func txtCustomerRegionSuccess(sender:DataPickerViewController,province:Province,city:City){
+        
+        self.txtCustomerRegion.endEditing(true);
         
         self.txtCustomerRegion.text = "\(province.name!) -> \(city.name!)";
         self.province = province;

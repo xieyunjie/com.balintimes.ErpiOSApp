@@ -11,11 +11,13 @@ import Foundation
 
 
 struct AppSetting {
-    static let BaseUrl = "http://172.16.2.12:3322/";
+    static let BaseUrl = "http://172.16.2.19:3322/";
     
     enum CrmUrl:String {
-        case registerCustomerUrl = "crm/registercustomer";
-        case signCustomerUrl = "crm/signcustomer";
+        case registerCustomerUrl = "crm/register";
+        case signCustomerUrl = "crm/sign";
+        case attUrl = "crm/att";
+        
         case cityUrl = "crm/cities",provinceUrl = "crm/province";
     }
 }

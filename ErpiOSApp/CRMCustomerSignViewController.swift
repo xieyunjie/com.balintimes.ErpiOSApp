@@ -38,7 +38,6 @@ class CRMCustomerSignViewController: UIViewController,CRMCustomerSignFormControl
     }
     
     func formRequireFieldCheck(finish:Bool){
-        print("require check \(finish)");
         
         if finish == true{
             self.btnSave.enabled = true;
@@ -61,8 +60,15 @@ class CRMCustomerSignViewController: UIViewController,CRMCustomerSignFormControl
     @IBAction func btnSaveClick(sender: AnyObject) {
         
         let result = self.formController.getCustomerAndBrand();
-        
-        print(result.customer.ToDictionory());
+
+        RequestApi.post(AppSetting.CrmUrl.signCustomerUrl.rawValue, result.customer.ToDictionory(), success: { (retData:ResponseData<BaseModel>) -> Void in
+            
+            print(retData);
+            
+            }) { (err:NSError?) -> Void in
+                print(err);
+        }
+ 
         
     }
     @IBAction func btnCancelClick(sender: AnyObject) {
