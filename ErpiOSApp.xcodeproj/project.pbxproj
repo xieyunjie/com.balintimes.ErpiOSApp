@@ -7,23 +7,94 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		73EF62145072FAE31BE09368 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81A150C0B05BD2FAD22D4DAA /* Pods.framework */; };
 		9A7A849B1C191B0C0024A310 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A849A1C191B0C0024A310 /* AppDelegate.swift */; };
-		9A7A849D1C191B0C0024A310 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A849C1C191B0C0024A310 /* ViewController.swift */; };
-		9A7A84A01C191B0C0024A310 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A7A849E1C191B0C0024A310 /* Main.storyboard */; };
 		9A7A84A31C191B0C0024A310 /* ErpiOSApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A84A11C191B0C0024A310 /* ErpiOSApp.xcdatamodeld */; };
 		9A7A84A51C191B0C0024A310 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A7A84A41C191B0C0024A310 /* Assets.xcassets */; };
-		9A7A84A81C191B0C0024A310 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A7A84A61C191B0C0024A310 /* LaunchScreen.storyboard */; };
+		9A7A84B01C191ED60024A310 /* AppSetting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A84AF1C191ED60024A310 /* AppSetting.swift */; };
+		9A7A84B31C191F0D0024A310 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A84B21C191F0D0024A310 /* ViewController.swift */; };
+		9A7A84B81C191F210024A310 /* CRMDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A84B51C191F210024A310 /* CRMDemoViewController.swift */; };
+		9A7A84B91C191F210024A310 /* CRMCustomerSignViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A84B61C191F210024A310 /* CRMCustomerSignViewController.swift */; };
+		9A7A84BA1C191F210024A310 /* CRMCustomerSignFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A84B71C191F210024A310 /* CRMCustomerSignFormController.swift */; };
+		9A7A84BF1C191F320024A310 /* EntryLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A84BB1C191F320024A310 /* EntryLoginViewController.swift */; };
+		9A7A84C01C191F320024A310 /* EntryErpListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A84BC1C191F320024A310 /* EntryErpListViewController.swift */; };
+		9A7A84C11C191F320024A310 /* EntryCommonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A84BD1C191F320024A310 /* EntryCommonViewController.swift */; };
+		9A7A84C21C191F320024A310 /* EntryUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A84BE1C191F320024A310 /* EntryUserViewController.swift */; };
+		9A7A84CD1C191F7F0024A310 /* Province.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A84C61C191F7F0024A310 /* Province.swift */; };
+		9A7A84CE1C191F7F0024A310 /* City.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A84C71C191F7F0024A310 /* City.swift */; };
+		9A7A84CF1C191F7F0024A310 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A84C81C191F7F0024A310 /* UserModel.swift */; };
+		9A7A84D01C191F7F0024A310 /* UserModelGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A84C91C191F7F0024A310 /* UserModelGroup.swift */; };
+		9A7A84D11C191F7F0024A310 /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A84CA1C191F7F0024A310 /* BaseModel.swift */; };
+		9A7A84D21C191F7F0024A310 /* Customer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A84CB1C191F7F0024A310 /* Customer.swift */; };
+		9A7A84D31C191F7F0024A310 /* Brand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A84CC1C191F7F0024A310 /* Brand.swift */; };
+		9A7A84D61C191F900024A310 /* RequestApi.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A84D51C191F900024A310 /* RequestApi.swift */; };
+		9A7A84DA1C191FAD0024A310 /* commoncells.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9A7A84D81C191FAD0024A310 /* commoncells.plist */; };
+		9A7A84DB1C191FAD0024A310 /* usermodels.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9A7A84D91C191FAD0024A310 /* usermodels.plist */; };
+		9A7A84DE1C191FCC0024A310 /* DlgMsg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A84DD1C191FCC0024A310 /* DlgMsg.swift */; };
+		9A7A84E61C191FDF0024A310 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A7A84E01C191FDF0024A310 /* Main.storyboard */; };
+		9A7A84E71C191FDF0024A310 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A7A84E11C191FDF0024A310 /* LaunchScreen.storyboard */; };
+		9A7A84E81C191FDF0024A310 /* Entry.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A7A84E21C191FDF0024A310 /* Entry.storyboard */; };
+		9A7A84E91C191FDF0024A310 /* CRM.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A7A84E31C191FDF0024A310 /* CRM.storyboard */; };
+		9A7A84EA1C191FDF0024A310 /* BMMS.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A7A84E41C191FDF0024A310 /* BMMS.storyboard */; };
+		9A7A84EB1C191FDF0024A310 /* Quote.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A7A84E51C191FDF0024A310 /* Quote.storyboard */; };
+		9A7A84F71C191FED0024A310 /* CityPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A84ED1C191FED0024A310 /* CityPicker.swift */; };
+		9A7A84F81C191FED0024A310 /* BaseActionSheetPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A84EE1C191FED0024A310 /* BaseActionSheetPickerView.swift */; };
+		9A7A84F91C191FED0024A310 /* CommonViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A84EF1C191FED0024A310 /* CommonViewCell.swift */; };
+		9A7A84FA1C191FED0024A310 /* ErpListViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A84F01C191FED0024A310 /* ErpListViewHeader.swift */; };
+		9A7A84FB1C191FED0024A310 /* ErpListViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A84F11C191FED0024A310 /* ErpListViewCell.swift */; };
+		9A7A84FC1C191FED0024A310 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A84F21C191FED0024A310 /* DatePickerViewController.swift */; };
+		9A7A84FD1C191FED0024A310 /* DatePickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A7A84F31C191FED0024A310 /* DatePickerViewController.xib */; };
+		9A7A84FE1C191FED0024A310 /* DataPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A84F41C191FED0024A310 /* DataPickerViewController.swift */; };
+		9A7A84FF1C191FED0024A310 /* DataPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A7A84F51C191FED0024A310 /* DataPickerViewController.xib */; };
+		9A7A85051C19269C0024A310 /* CityPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A85041C19269C0024A310 /* CityPickerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7C905B7D984955C1491D1B8B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		81A150C0B05BD2FAD22D4DAA /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A7A84971C191B0C0024A310 /* ErpiOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ErpiOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A7A849A1C191B0C0024A310 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		9A7A849C1C191B0C0024A310 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		9A7A849F1C191B0C0024A310 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9A7A84A21C191B0C0024A310 /* ErpiOSApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ErpiOSApp.xcdatamodel; sourceTree = "<group>"; };
 		9A7A84A41C191B0C0024A310 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		9A7A84A71C191B0C0024A310 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9A7A84A91C191B0C0024A310 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9A7A84AF1C191ED60024A310 /* AppSetting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppSetting.swift; sourceTree = "<group>"; };
+		9A7A84B21C191F0D0024A310 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9A7A84B51C191F210024A310 /* CRMDemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRMDemoViewController.swift; sourceTree = "<group>"; };
+		9A7A84B61C191F210024A310 /* CRMCustomerSignViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRMCustomerSignViewController.swift; sourceTree = "<group>"; };
+		9A7A84B71C191F210024A310 /* CRMCustomerSignFormController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRMCustomerSignFormController.swift; sourceTree = "<group>"; };
+		9A7A84BB1C191F320024A310 /* EntryLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryLoginViewController.swift; sourceTree = "<group>"; };
+		9A7A84BC1C191F320024A310 /* EntryErpListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryErpListViewController.swift; sourceTree = "<group>"; };
+		9A7A84BD1C191F320024A310 /* EntryCommonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryCommonViewController.swift; sourceTree = "<group>"; };
+		9A7A84BE1C191F320024A310 /* EntryUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryUserViewController.swift; sourceTree = "<group>"; };
+		9A7A84C61C191F7F0024A310 /* Province.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Province.swift; sourceTree = "<group>"; };
+		9A7A84C71C191F7F0024A310 /* City.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = City.swift; sourceTree = "<group>"; };
+		9A7A84C81C191F7F0024A310 /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		9A7A84C91C191F7F0024A310 /* UserModelGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModelGroup.swift; sourceTree = "<group>"; };
+		9A7A84CA1C191F7F0024A310 /* BaseModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
+		9A7A84CB1C191F7F0024A310 /* Customer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Customer.swift; sourceTree = "<group>"; };
+		9A7A84CC1C191F7F0024A310 /* Brand.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Brand.swift; sourceTree = "<group>"; };
+		9A7A84D51C191F900024A310 /* RequestApi.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestApi.swift; sourceTree = "<group>"; };
+		9A7A84D81C191FAD0024A310 /* commoncells.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = commoncells.plist; sourceTree = "<group>"; };
+		9A7A84D91C191FAD0024A310 /* usermodels.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = usermodels.plist; sourceTree = "<group>"; };
+		9A7A84DD1C191FCC0024A310 /* DlgMsg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DlgMsg.swift; sourceTree = "<group>"; };
+		9A7A84E01C191FDF0024A310 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		9A7A84E11C191FDF0024A310 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9A7A84E21C191FDF0024A310 /* Entry.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Entry.storyboard; sourceTree = "<group>"; };
+		9A7A84E31C191FDF0024A310 /* CRM.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CRM.storyboard; sourceTree = "<group>"; };
+		9A7A84E41C191FDF0024A310 /* BMMS.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = BMMS.storyboard; sourceTree = "<group>"; };
+		9A7A84E51C191FDF0024A310 /* Quote.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Quote.storyboard; sourceTree = "<group>"; };
+		9A7A84ED1C191FED0024A310 /* CityPicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityPicker.swift; sourceTree = "<group>"; };
+		9A7A84EE1C191FED0024A310 /* BaseActionSheetPickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseActionSheetPickerView.swift; sourceTree = "<group>"; };
+		9A7A84EF1C191FED0024A310 /* CommonViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommonViewCell.swift; sourceTree = "<group>"; };
+		9A7A84F01C191FED0024A310 /* ErpListViewHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErpListViewHeader.swift; sourceTree = "<group>"; };
+		9A7A84F11C191FED0024A310 /* ErpListViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErpListViewCell.swift; sourceTree = "<group>"; };
+		9A7A84F21C191FED0024A310 /* DatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
+		9A7A84F31C191FED0024A310 /* DatePickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DatePickerViewController.xib; sourceTree = "<group>"; };
+		9A7A84F41C191FED0024A310 /* DataPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataPickerViewController.swift; sourceTree = "<group>"; };
+		9A7A84F51C191FED0024A310 /* DataPickerViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DataPickerViewController.xib; sourceTree = "<group>"; };
+		9A7A85011C1920110024A310 /* ErpiOSApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ErpiOSApp-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		9A7A85041C19269C0024A310 /* CityPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityPickerViewController.swift; sourceTree = "<group>"; };
+		C995F20DCCE76B420B764054 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +102,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				73EF62145072FAE31BE09368 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1FE4F278CB72F1023FFE5F97 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				81A150C0B05BD2FAD22D4DAA /* Pods.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		999127EA7CA301F9470EB750 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7C905B7D984955C1491D1B8B /* Pods.debug.xcconfig */,
+				C995F20DCCE76B420B764054 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		9A7A848E1C191B0C0024A310 = {
 			isa = PBXGroup;
 			children = (
 				9A7A84991C191B0C0024A310 /* ErpiOSApp */,
 				9A7A84981C191B0C0024A310 /* Products */,
+				999127EA7CA301F9470EB750 /* Pods */,
+				1FE4F278CB72F1023FFE5F97 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,14 +148,128 @@
 			isa = PBXGroup;
 			children = (
 				9A7A849A1C191B0C0024A310 /* AppDelegate.swift */,
-				9A7A849C1C191B0C0024A310 /* ViewController.swift */,
-				9A7A849E1C191B0C0024A310 /* Main.storyboard */,
-				9A7A84A41C191B0C0024A310 /* Assets.xcassets */,
-				9A7A84A61C191B0C0024A310 /* LaunchScreen.storyboard */,
-				9A7A84A91C191B0C0024A310 /* Info.plist */,
-				9A7A84A11C191B0C0024A310 /* ErpiOSApp.xcdatamodeld */,
+				9A7A84AF1C191ED60024A310 /* AppSetting.swift */,
+				9A7A84B11C191EF30024A310 /* controller */,
+				9A7A84C41C191F5F0024A310 /* db */,
+				9A7A84C51C191F6B0024A310 /* model */,
+				9A7A84D41C191F870024A310 /* service */,
+				9A7A84D71C191F9B0024A310 /* support file */,
+				9A7A84DC1C191FC30024A310 /* util */,
+				9A7A84DF1C191FD20024A310 /* view */,
+				9A7A84EC1C191FE70024A310 /* xib */,
 			);
 			path = ErpiOSApp;
+			sourceTree = "<group>";
+		};
+		9A7A84B11C191EF30024A310 /* controller */ = {
+			isa = PBXGroup;
+			children = (
+				9A7A84C31C191F370024A310 /* Entry */,
+				9A7A84B41C191F160024A310 /* CRM */,
+				9A7A84B21C191F0D0024A310 /* ViewController.swift */,
+			);
+			name = controller;
+			sourceTree = "<group>";
+		};
+		9A7A84B41C191F160024A310 /* CRM */ = {
+			isa = PBXGroup;
+			children = (
+				9A7A84B51C191F210024A310 /* CRMDemoViewController.swift */,
+				9A7A84B61C191F210024A310 /* CRMCustomerSignViewController.swift */,
+				9A7A84B71C191F210024A310 /* CRMCustomerSignFormController.swift */,
+			);
+			name = CRM;
+			sourceTree = "<group>";
+		};
+		9A7A84C31C191F370024A310 /* Entry */ = {
+			isa = PBXGroup;
+			children = (
+				9A7A84BB1C191F320024A310 /* EntryLoginViewController.swift */,
+				9A7A84BC1C191F320024A310 /* EntryErpListViewController.swift */,
+				9A7A84BD1C191F320024A310 /* EntryCommonViewController.swift */,
+				9A7A84BE1C191F320024A310 /* EntryUserViewController.swift */,
+			);
+			name = Entry;
+			sourceTree = "<group>";
+		};
+		9A7A84C41C191F5F0024A310 /* db */ = {
+			isa = PBXGroup;
+			children = (
+				9A7A84A11C191B0C0024A310 /* ErpiOSApp.xcdatamodeld */,
+			);
+			name = db;
+			sourceTree = "<group>";
+		};
+		9A7A84C51C191F6B0024A310 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				9A7A84C61C191F7F0024A310 /* Province.swift */,
+				9A7A84C71C191F7F0024A310 /* City.swift */,
+				9A7A84C81C191F7F0024A310 /* UserModel.swift */,
+				9A7A84C91C191F7F0024A310 /* UserModelGroup.swift */,
+				9A7A84CA1C191F7F0024A310 /* BaseModel.swift */,
+				9A7A84CB1C191F7F0024A310 /* Customer.swift */,
+				9A7A84CC1C191F7F0024A310 /* Brand.swift */,
+			);
+			name = model;
+			sourceTree = "<group>";
+		};
+		9A7A84D41C191F870024A310 /* service */ = {
+			isa = PBXGroup;
+			children = (
+				9A7A84D51C191F900024A310 /* RequestApi.swift */,
+			);
+			name = service;
+			sourceTree = "<group>";
+		};
+		9A7A84D71C191F9B0024A310 /* support file */ = {
+			isa = PBXGroup;
+			children = (
+				9A7A85011C1920110024A310 /* ErpiOSApp-Bridging-Header.h */,
+				9A7A84D81C191FAD0024A310 /* commoncells.plist */,
+				9A7A84D91C191FAD0024A310 /* usermodels.plist */,
+				9A7A84A41C191B0C0024A310 /* Assets.xcassets */,
+				9A7A84A91C191B0C0024A310 /* Info.plist */,
+			);
+			name = "support file";
+			sourceTree = "<group>";
+		};
+		9A7A84DC1C191FC30024A310 /* util */ = {
+			isa = PBXGroup;
+			children = (
+				9A7A84DD1C191FCC0024A310 /* DlgMsg.swift */,
+			);
+			name = util;
+			sourceTree = "<group>";
+		};
+		9A7A84DF1C191FD20024A310 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				9A7A84E01C191FDF0024A310 /* Main.storyboard */,
+				9A7A84E11C191FDF0024A310 /* LaunchScreen.storyboard */,
+				9A7A84E21C191FDF0024A310 /* Entry.storyboard */,
+				9A7A84E31C191FDF0024A310 /* CRM.storyboard */,
+				9A7A84E41C191FDF0024A310 /* BMMS.storyboard */,
+				9A7A84E51C191FDF0024A310 /* Quote.storyboard */,
+			);
+			name = view;
+			sourceTree = "<group>";
+		};
+		9A7A84EC1C191FE70024A310 /* xib */ = {
+			isa = PBXGroup;
+			children = (
+				9A7A85041C19269C0024A310 /* CityPickerViewController.swift */,
+				9A7A84ED1C191FED0024A310 /* CityPicker.swift */,
+				9A7A84EE1C191FED0024A310 /* BaseActionSheetPickerView.swift */,
+				9A7A84EF1C191FED0024A310 /* CommonViewCell.swift */,
+				9A7A84F01C191FED0024A310 /* ErpListViewHeader.swift */,
+				9A7A84F11C191FED0024A310 /* ErpListViewCell.swift */,
+				9A7A84F21C191FED0024A310 /* DatePickerViewController.swift */,
+				9A7A84F31C191FED0024A310 /* DatePickerViewController.xib */,
+				9A7A84F41C191FED0024A310 /* DataPickerViewController.swift */,
+				9A7A84F51C191FED0024A310 /* DataPickerViewController.xib */,
+			);
+			name = xib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +279,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9A7A84AC1C191B0C0024A310 /* Build configuration list for PBXNativeTarget "ErpiOSApp" */;
 			buildPhases = (
+				A770D67EA9D91C4E598D37BA /* Check Pods Manifest.lock */,
 				9A7A84931C191B0C0024A310 /* Sources */,
 				9A7A84941C191B0C0024A310 /* Frameworks */,
 				9A7A84951C191B0C0024A310 /* Resources */,
+				BB61440C574588C4769D4342 /* Embed Pods Frameworks */,
+				5A047A57A4F478D328D29CEC /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -125,45 +333,107 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A7A84A81C191B0C0024A310 /* LaunchScreen.storyboard in Resources */,
+				9A7A84DB1C191FAD0024A310 /* usermodels.plist in Resources */,
+				9A7A84EB1C191FDF0024A310 /* Quote.storyboard in Resources */,
+				9A7A84E81C191FDF0024A310 /* Entry.storyboard in Resources */,
+				9A7A84E91C191FDF0024A310 /* CRM.storyboard in Resources */,
 				9A7A84A51C191B0C0024A310 /* Assets.xcassets in Resources */,
-				9A7A84A01C191B0C0024A310 /* Main.storyboard in Resources */,
+				9A7A84DA1C191FAD0024A310 /* commoncells.plist in Resources */,
+				9A7A84FD1C191FED0024A310 /* DatePickerViewController.xib in Resources */,
+				9A7A84EA1C191FDF0024A310 /* BMMS.storyboard in Resources */,
+				9A7A84FF1C191FED0024A310 /* DataPickerViewController.xib in Resources */,
+				9A7A84E71C191FDF0024A310 /* LaunchScreen.storyboard in Resources */,
+				9A7A84E61C191FDF0024A310 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5A047A57A4F478D328D29CEC /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A770D67EA9D91C4E598D37BA /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BB61440C574588C4769D4342 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9A7A84931C191B0C0024A310 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9A7A849D1C191B0C0024A310 /* ViewController.swift in Sources */,
+				9A7A84C21C191F320024A310 /* EntryUserViewController.swift in Sources */,
+				9A7A84D31C191F7F0024A310 /* Brand.swift in Sources */,
 				9A7A84A31C191B0C0024A310 /* ErpiOSApp.xcdatamodeld in Sources */,
+				9A7A84B81C191F210024A310 /* CRMDemoViewController.swift in Sources */,
+				9A7A84CD1C191F7F0024A310 /* Province.swift in Sources */,
+				9A7A84DE1C191FCC0024A310 /* DlgMsg.swift in Sources */,
+				9A7A84C11C191F320024A310 /* EntryCommonViewController.swift in Sources */,
+				9A7A84D01C191F7F0024A310 /* UserModelGroup.swift in Sources */,
+				9A7A84FB1C191FED0024A310 /* ErpListViewCell.swift in Sources */,
+				9A7A84D11C191F7F0024A310 /* BaseModel.swift in Sources */,
 				9A7A849B1C191B0C0024A310 /* AppDelegate.swift in Sources */,
+				9A7A84C01C191F320024A310 /* EntryErpListViewController.swift in Sources */,
+				9A7A84F81C191FED0024A310 /* BaseActionSheetPickerView.swift in Sources */,
+				9A7A84BF1C191F320024A310 /* EntryLoginViewController.swift in Sources */,
+				9A7A84FC1C191FED0024A310 /* DatePickerViewController.swift in Sources */,
+				9A7A84F91C191FED0024A310 /* CommonViewCell.swift in Sources */,
+				9A7A84F71C191FED0024A310 /* CityPicker.swift in Sources */,
+				9A7A84FE1C191FED0024A310 /* DataPickerViewController.swift in Sources */,
+				9A7A84CF1C191F7F0024A310 /* UserModel.swift in Sources */,
+				9A7A85051C19269C0024A310 /* CityPickerViewController.swift in Sources */,
+				9A7A84D21C191F7F0024A310 /* Customer.swift in Sources */,
+				9A7A84FA1C191FED0024A310 /* ErpListViewHeader.swift in Sources */,
+				9A7A84B31C191F0D0024A310 /* ViewController.swift in Sources */,
+				9A7A84BA1C191F210024A310 /* CRMCustomerSignFormController.swift in Sources */,
+				9A7A84B91C191F210024A310 /* CRMCustomerSignViewController.swift in Sources */,
+				9A7A84CE1C191F7F0024A310 /* City.swift in Sources */,
+				9A7A84D61C191F900024A310 /* RequestApi.swift in Sources */,
+				9A7A84B01C191ED60024A310 /* AppSetting.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		9A7A849E1C191B0C0024A310 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9A7A849F1C191B0C0024A310 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		9A7A84A61C191B0C0024A310 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				9A7A84A71C191B0C0024A310 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		9A7A84AA1C191B0C0024A310 /* Debug */ = {
@@ -208,6 +478,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 			};
 			name = Debug;
 		};
@@ -245,29 +516,37 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
+				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		9A7A84AD1C191B0C0024A310 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C905B7D984955C1491D1B8B /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = ErpiOSApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.balintimes.ErpiOSApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ErpiOSApp-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		9A7A84AE1C191B0C0024A310 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C995F20DCCE76B420B764054 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = ErpiOSApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.balintimes.ErpiOSApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "ErpiOSApp-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -290,6 +569,7 @@
 				9A7A84AE1C191B0C0024A310 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
