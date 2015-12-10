@@ -60,15 +60,23 @@ class CRMCustomerSignViewController: UIViewController,CRMCustomerSignFormControl
     @IBAction func btnSaveClick(sender: AnyObject) {
         
         let result = self.formController.getCustomerAndBrand();
-
-        RequestApi.post(AppSetting.CrmUrl.signCustomerUrl.rawValue, result.customer.ToDictionory(), success: { (retData:ResponseData<BaseModel>) -> Void in
+        
+        let hub = BlockMsg.showLoading(self.view);
+        
+        RequestApi.post(AppSetting.CrmUrl.signCustomerUrl.rawValue, result.customer.ToDictionory()) { (res:ResponseData<BaseModel>) -> Void in
+            BlockMsg.hideLoading(hub);
             
-            print(retData);
-            
-            }) { (err:NSError?) -> Void in
-                print(err);
+            if res.success == true{
+                
+                BlockMsg.showText(self.view, msg: res.msg, afterDelay: 2, completion: { () -> Void in
+                    print("返回！！");
+                })
+                
+            }
+            else{
+                BlockMsg.showText(self.view, msg: res.msg, afterDelay: 1.0);
+            }
         }
- 
         
     }
     @IBAction func btnCancelClick(sender: AnyObject) {

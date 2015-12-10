@@ -117,6 +117,25 @@ struct RequestApi{
                 completion(failure);
         }
     }
+    static func post(UrlString:String,_ parameters:[String:AnyObject]?,completion:(ResponseData<BaseModel>)->Void){
+        
+        requestData(.POST, UrlString, parameters, success: { (data) -> Void in
+            
+            let resJson = JSON(data:data);
+            
+            let retData = ResponseData<BaseModel>(data: resJson["data"].description, success: resJson["success"].boolValue,
+                msg: resJson["message"].stringValue, total: resJson["total"].intValue,
+                pageSize: resJson["pageSize"].intValue)
+            
+            completion(retData);
+            
+            }) { (err) -> Void in
+                let failure = ResponseData<BaseModel>(err: err!, errCode: err!.code);
+                
+                completion(failure);
+        }
+    }
+    
     // post =============
     
     
@@ -156,7 +175,7 @@ struct RequestApi{
     }
     static func get<T:BaseModel>(UrlString:String,_ parameters:[String:AnyObject]?,completion:(ResponseData<T>)->Void){
         
-        requestData(.GET, UrlString, parameters, success: { (data) -> Void in 
+        requestData(.GET, UrlString, parameters, success: { (data) -> Void in
             
             let resJson = JSON(data:data);
             
