@@ -59,6 +59,25 @@ struct BlockMsg {
         
         HUD.hide(true, afterDelay: afterDelay);
     }
+    static func showText(view:UIView!,msg:String,afterDelay:UInt32,completion:(() -> Void)?){
+        let HUD = MBProgressHUD.showHUDAddedTo(view, animated: true);
+        HUD.mode = MBProgressHUDMode.Text;
+        HUD.dimBackground  = true;
+        HUD.labelText = msg;
+        
+        HUD.showAnimated(true
+            , whileExecutingBlock: { () -> Void in
+                sleep(afterDelay)
+            }) { () -> Void in
+                HUD.removeFromSuperview();
+                if let c = completion{
+                    c();
+                }
+        }
+        
+        
+        
+    }
     
     static func showDuring(view:UIView!,completeAction:(() -> Void)?){
         let HUD = MBProgressHUD.showHUDAddedTo(view, animated: true);

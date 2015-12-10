@@ -21,6 +21,9 @@ class ResponseData<T:Mappable>{
     var total:Int;
     var pageSize:Int;
     
+    var err:NSError?;
+    var errCode:Int?;
+    
     init(data:String,success:Bool,msg:String,total:Int,pageSize:Int){
         self.data = data;
         self.success = success;
@@ -29,18 +32,28 @@ class ResponseData<T:Mappable>{
         self.pageSize = pageSize;
     }
     
+    init(err:NSError,errCode:Int){
+        self.success = false;
+        self.err = err;
+        self.errCode = errCode;
+        self.data = "";
+        self.msg = "请求数据失败";
+        self.total = 0;
+        self.pageSize = 0;
+    }
+    
     lazy var model:T? = {
         if self.data.isEmpty == true {
             return nil;
         }
         return  Mapper<T>().map(self.data);
-        }();
+    }();
     lazy var list:Array<T>? = {
         if self.data.isEmpty == true {
             return nil;
         }
         return Mapper<T>().mapArray(self.data);
-        }();
+    }();
 }
 
 class UploadResponse:Mappable{
@@ -74,8 +87,8 @@ struct RequestApi{
             let resJson = JSON(data:data);
             
             let retData = ResponseData<T>(data: resJson["data"].description, success: resJson["success"].boolValue,
-                                            msg: resJson["message"].stringValue, total: resJson["total"].intValue,
-                                            pageSize: resJson["pageSize"].intValue)
+                msg: resJson["message"].stringValue, total: resJson["total"].intValue,
+                pageSize: resJson["pageSize"].intValue)
             
             success(retData);
             
@@ -84,6 +97,24 @@ struct RequestApi{
                 if let f = failure{
                     f(err);
                 }
+        }
+    }
+    static func post<T:BaseModel>(UrlString:String,_ parameters:[String:AnyObject]?,completion:(ResponseData<T>)->Void){
+        
+        requestData(.POST, UrlString, parameters, success: { (data) -> Void in
+            
+            let resJson = JSON(data:data);
+            
+            let retData = ResponseData<T>(data: resJson["data"].description, success: resJson["success"].boolValue,
+                msg: resJson["message"].stringValue, total: resJson["total"].intValue,
+                pageSize: resJson["pageSize"].intValue)
+            
+            completion(retData);
+            
+            }) { (err) -> Void in
+                let failure = ResponseData<T>(err: err!, errCode: err!.code);
+                
+                completion(failure);
         }
     }
     // post =============
@@ -110,8 +141,8 @@ struct RequestApi{
             let resJson = JSON(data:data);
             
             let retData = ResponseData<T>(data: resJson["data"].description, success: resJson["success"].boolValue,
-                                            msg: resJson["message"].stringValue, total: resJson["total"].intValue,
-                                            pageSize: resJson["pageSize"].intValue)
+                msg: resJson["message"].stringValue, total: resJson["total"].intValue,
+                pageSize: resJson["pageSize"].intValue)
             
             success(retData);
             
@@ -121,6 +152,24 @@ struct RequestApi{
                 if let f = failure{
                     f(err);
                 }
+        }
+    }
+    static func get<T:BaseModel>(UrlString:String,_ parameters:[String:AnyObject]?,completion:(ResponseData<T>)->Void){
+        
+        requestData(.GET, UrlString, parameters, success: { (data) -> Void in 
+            
+            let resJson = JSON(data:data);
+            
+            let retData = ResponseData<T>(data: resJson["data"].description, success: resJson["success"].boolValue,
+                msg: resJson["message"].stringValue, total: resJson["total"].intValue,
+                pageSize: resJson["pageSize"].intValue)
+            
+            completion(retData);
+            
+            }) { (err) -> Void in
+                let failure = ResponseData<T>(err: err!, errCode: err!.code);
+                
+                completion(failure);
         }
     }
     // get =============
@@ -200,7 +249,6 @@ struct RequestApi{
         }
     }
     
-    
     // upload
     static func upload(UrlString:URLStringConvertible, files:[String:UIImage],fields:[String:String]?,success:(ResponseData<UploadResponse>) -> Void,failure:((NSError?) -> Void)?){
         var filesDic = Dictionary<String,NSURL>();
@@ -219,7 +267,7 @@ struct RequestApi{
             for (key,value) in fs{
                 
                 fieldsDic[key] = value.dataUsingEncoding(NSUTF8StringEncoding);
-            
+                
             }
         }
         
@@ -256,26 +304,26 @@ struct RequestApi{
                 }
                 
                 switch encodingResult{
-                    case .Success(let upload,_,_):
-                        upload.responseJSON(completionHandler: { (res) -> Void in
-                            
-                            if res.result.isFailure == true{
-                                print(res.result.error?.code);
-                                if let f = failure{
-                                    f(res.result.error);
-                                }
-                                return;
+                case .Success(let upload,_,_):
+                    upload.responseJSON(completionHandler: { (res) -> Void in
+                        
+                        if res.result.isFailure == true{
+                            print(res.result.error?.code);
+                            if let f = failure{
+                                f(res.result.error);
                             }
-                            
-                            let resJson = JSON(data:res.data!);
-                            
-                            let retData = ResponseData<UploadResponse>(data: "", success: resJson["success"].boolValue,
-                                msg: resJson["message"].stringValue, total: 0, pageSize: 0)
-                            
-                            success(retData);
-                            
-                            
-                        });
+                            return;
+                        }
+                        
+                        let resJson = JSON(data:res.data!);
+                        
+                        let retData = ResponseData<UploadResponse>(data: "", success: resJson["success"].boolValue,
+                            msg: resJson["message"].stringValue, total: 0, pageSize: 0)
+                        
+                        success(retData);
+                        
+                        
+                    });
                 case .Failure(let err):
                     if let f = failure{
                         f(err as NSError);
@@ -283,9 +331,9 @@ struct RequestApi{
                     
                 }
         }
-
         
-    
+        
+        
         
     }
     

@@ -55,29 +55,46 @@ class CityPickerViewController: DataPickerViewController,UIPickerViewDelegate,UI
         self.dataPicker.delegate = self;
         
         
-        MBProgressHUD.showHUDAddedTo(self.view, animated: true);
-        
-        RequestApi.get(AppSetting.CrmUrl.provinceUrl.rawValue, nil, success: { (ret:ResponseData<Province>) -> Void in
-            print(ret.list);
-            self.provinces = ret.list;
-            MBProgressHUD.hideHUDForView(self.view, animated: true);
-            self.dataPicker.reloadComponent(0)
-            self.dataPicker.selectRow(0, inComponent: 0, animated: true)
-            
-            self.pickerView(self.dataPicker, didSelectRow: 0, inComponent: 0);
-            
-            }) { (err) -> Void in
-                MBProgressHUD.hideHUDForView(self.view, animated: true);
-                let alert = DlgMsg.alertWebError({ (action:UIAlertAction) -> Void in
-                    
-                    
-                    }, message: nil);
-                
-                self.presentViewController(alert, animated: true, completion: { () -> Void in
+//        MBProgressHUD.showHUDAddedTo(self.view, animated: true);
+        let hud = BlockMsg.showLoading(self.view);
+        RequestApi.get(AppSetting.CrmUrl.provinceUrl.rawValue, nil) { (res:ResponseData<Province>) -> Void in
+             BlockMsg.hideLoading(hud);
+            if res.success == true{
+                self.provinces = res.list;
+                self.dataPicker.reloadComponent(0);
+                self.dataPicker.selectRow(0, inComponent: 0, animated: true);
+                self.pickerView(self.dataPicker, didSelectRow: 0, inComponent: 0);
+            }
+            else{
+                BlockMsg.showText(self.view, msg: res.msg, afterDelay: 2, completion: { () -> Void in
                     self.hide();
                 })
-                
+            }
         }
+        
+//        RequestApi.get(AppSetting.CrmUrl.provinceUrl.rawValue, nil, success: { (ret:ResponseData<Province>) -> Void in
+//            print(ret.list);
+//            self.provinces = ret.list;
+////            MBProgressHUD.hideHUDForView(self.view, animated: true);
+//            BlockMsg.hideLoading(hud);
+//            self.dataPicker.reloadComponent(0)
+//            self.dataPicker.selectRow(0, inComponent: 0, animated: true)
+//            
+//            self.pickerView(self.dataPicker, didSelectRow: 0, inComponent: 0);
+//            
+//            }) { (err) -> Void in
+////                MBProgressHUD.hideHUDForView(self.view, animated: true);
+//                BlockMsg.hideLoading(hud);
+//                let alert = DlgMsg.alertWebError({ (action:UIAlertAction) -> Void in
+//                    
+//                    
+//                    }, message: nil);
+//                
+//                self.presentViewController(alert, animated: true, completion: { () -> Void in
+//                    self.hide();
+//                })
+//                
+//        }
     }
     func pickerDone() {
         if let d = self.done {
@@ -130,26 +147,43 @@ class CityPickerViewController: DataPickerViewController,UIPickerViewDelegate,UI
             let province = self.provinces?[row];
             
             if let p = province{
-                MBProgressHUD.showHUDAddedTo(self.view, animated: true);
-                RequestApi.get( "\(AppSetting.CrmUrl.cityUrl.rawValue)/\(p.id!)", nil, success: { (ret:ResponseData<City>) -> Void in
-                    
-                    self.cities = ret.list;
-                    self.dataPicker.reloadComponent(1);
-                    MBProgressHUD.hideHUDForView(self.view, animated: true);
-                    self.dataPicker.selectRow(0, inComponent: 1, animated: true);
-                    
-                    }) { (err) -> Void in
-                        MBProgressHUD.hideHUDForView(self.view, animated: true);
-                        let alert = DlgMsg.alertWebError({ (action:UIAlertAction) -> Void in
-                            
-                            
-                            }, message: nil);
-                        
-                        self.parentViewController?.presentViewController(alert, animated: true, completion: { () -> Void in
+////                MBProgressHUD.showHUDAddedTo(self.view, animated: true);
+                let hud = BlockMsg.showLoading(self.view);
+                RequestApi.get("\(AppSetting.CrmUrl.cityUrl.rawValue)/\(p.id!)", nil, completion: { (res:ResponseData<City>) -> Void in
+                    BlockMsg.hideLoading(hud);
+                    if res.success == true{
+                        self.cities = res.list;
+                        self.dataPicker.reloadComponent(1);
+                        self.dataPicker.selectRow(0, inComponent: 1, animated: true);
+                    }
+                    else{
+                        BlockMsg.showText(self.view, msg: res.msg, afterDelay: 2, completion: { () -> Void in
                             self.hide();
                         })
-                        
-                }
+                    }
+                    
+                })
+//                RequestApi.get( "\(AppSetting.CrmUrl.cityUrl.rawValue)/\(p.id!)", nil, success: { (ret:ResponseData<City>) -> Void in
+//                    
+//                    self.cities = ret.list;
+//                    self.dataPicker.reloadComponent(1);
+////                    MBProgressHUD.hideHUDForView(self.view, animated: true);
+//                    BlockMsg.hideLoading(hud);
+//                    self.dataPicker.selectRow(0, inComponent: 1, animated: true);
+//                    
+//                    }) { (err) -> Void in
+////                        MBProgressHUD.hideHUDForView(self.view, animated: true);
+//                        BlockMsg.hideLoading(hud);
+//                        let alert = DlgMsg.alertWebError({ (action:UIAlertAction) -> Void in
+//                            
+//                            
+//                            }, message: nil);
+//                        
+//                        self.parentViewController?.presentViewController(alert, animated: true, completion: { () -> Void in
+//                            self.hide();
+//                        })
+//                        
+//                }
             }
             else{
                 print(self.provinces);
