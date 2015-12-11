@@ -17,17 +17,17 @@
 				<key>board</key>
 				<string>CRM</string>
 				<key>controller</key>
-				<string>CustomerRegisterViewController</string>
+				<string>CRMCustomerListView</string>
 			</dict>
 			<dict>
 				<key>label</key>
-				<string>客户查询</string>
+				<string>登记</string>
 				<key>icon</key>
 				<string>gift</string>
 				<key>board</key>
 				<string>CRM</string>
 				<key>controller</key>
-				<string>CustomerRegisterViewController</string>
+				<string>CRMCustomerSignFormView</string>
 			</dict>
 			<dict>
 				<key>label</key>

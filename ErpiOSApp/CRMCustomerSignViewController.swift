@@ -8,15 +8,23 @@
 
 import UIKit
 
+protocol CRMCustomerSignViewControllerDelegate:NSObjectProtocol{
+    
+    func saveSuccessful(success:Bool);
+    
+}
+
 class CRMCustomerSignViewController: UIViewController,CRMCustomerSignFormControllerDelegate {
 
     
     var formController:CRMCustomerSignFormController!;
     var editCustomer:Customer?;
     var editBrand:Brand?;
-    @IBOutlet weak var containerView: UIView!
     
-    @IBOutlet weak var btnSave: UIButton! 
+    @IBOutlet weak var containerView: UIView!
+    @IBOutlet weak var btnSave: UIButton!
+    
+    var delegate:CRMCustomerSignViewControllerDelegate?;
     
     
     override func viewDidLoad() {
@@ -69,20 +77,31 @@ class CRMCustomerSignViewController: UIViewController,CRMCustomerSignFormControl
             if res.success == true{
                 
                 BlockMsg.showText(self.view, msg: res.msg, afterDelay: 2, completion: { () -> Void in
-                    print("返回！！");
+                    print("保存成功。");
                 })
                 
             }
             else{
                 BlockMsg.showText(self.view, msg: res.msg, afterDelay: 1.0);
             }
+            
+            if let d = self.delegate{
+                d.saveSuccessful(res.success);
+            }
         }
         
     }
     @IBAction func btnCancelClick(sender: AnyObject) {
-        
+        if let d = self.delegate{
+            d.saveSuccessful(false);
+        }
     }
 
+    @IBAction func btnBackClick(sender: AnyObject) {
+        if let d = self.delegate{
+            d.saveSuccessful(false);
+        }
+    }
     /*
     // MARK: - Navigation
 

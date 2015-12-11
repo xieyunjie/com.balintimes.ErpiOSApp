@@ -48,6 +48,8 @@
 		9A7A84FF1C191FED0024A310 /* DataPickerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9A7A84F51C191FED0024A310 /* DataPickerViewController.xib */; };
 		9A7A85051C19269C0024A310 /* CityPickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A85041C19269C0024A310 /* CityPickerViewController.swift */; };
 		9A7A85071C192D880024A310 /* BlockMsg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A85061C192D880024A310 /* BlockMsg.swift */; };
+		9A7A850B1C1A6C640024A310 /* CRMCustomerListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A850A1C1A6C640024A310 /* CRMCustomerListController.swift */; };
+		9A7A850D1C1A6D550024A310 /* CustomerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A850C1C1A6D550024A310 /* CustomerCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +98,8 @@
 		9A7A85011C1920110024A310 /* ErpiOSApp-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ErpiOSApp-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
 		9A7A85041C19269C0024A310 /* CityPickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityPickerViewController.swift; sourceTree = "<group>"; };
 		9A7A85061C192D880024A310 /* BlockMsg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockMsg.swift; sourceTree = "<group>"; };
+		9A7A850A1C1A6C640024A310 /* CRMCustomerListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRMCustomerListController.swift; sourceTree = "<group>"; };
+		9A7A850C1C1A6D550024A310 /* CustomerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerCell.swift; sourceTree = "<group>"; };
 		C995F20DCCE76B420B764054 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -179,6 +183,7 @@
 				9A7A84B51C191F210024A310 /* CRMDemoViewController.swift */,
 				9A7A84B61C191F210024A310 /* CRMCustomerSignViewController.swift */,
 				9A7A84B71C191F210024A310 /* CRMCustomerSignFormController.swift */,
+				9A7A850A1C1A6C640024A310 /* CRMCustomerListController.swift */,
 			);
 			name = CRM;
 			sourceTree = "<group>";
@@ -271,6 +276,7 @@
 				9A7A84F31C191FED0024A310 /* DatePickerViewController.xib */,
 				9A7A84F41C191FED0024A310 /* DataPickerViewController.swift */,
 				9A7A84F51C191FED0024A310 /* DataPickerViewController.xib */,
+				9A7A850C1C1A6D550024A310 /* CustomerCell.swift */,
 			);
 			name = xib;
 			sourceTree = "<group>";
@@ -407,6 +413,7 @@
 			files = (
 				9A7A84C21C191F320024A310 /* EntryUserViewController.swift in Sources */,
 				9A7A84D31C191F7F0024A310 /* Brand.swift in Sources */,
+				9A7A850B1C1A6C640024A310 /* CRMCustomerListController.swift in Sources */,
 				9A7A84A31C191B0C0024A310 /* ErpiOSApp.xcdatamodeld in Sources */,
 				9A7A84B81C191F210024A310 /* CRMDemoViewController.swift in Sources */,
 				9A7A84CD1C191F7F0024A310 /* Province.swift in Sources */,
@@ -414,6 +421,7 @@
 				9A7A84DE1C191FCC0024A310 /* DlgMsg.swift in Sources */,
 				9A7A84C11C191F320024A310 /* EntryCommonViewController.swift in Sources */,
 				9A7A84D01C191F7F0024A310 /* UserModelGroup.swift in Sources */,
+				9A7A850D1C1A6D550024A310 /* CustomerCell.swift in Sources */,
 				9A7A84FB1C191FED0024A310 /* ErpListViewCell.swift in Sources */,
 				9A7A84D11C191F7F0024A310 /* BaseModel.swift in Sources */,
 				9A7A849B1C191B0C0024A310 /* AppDelegate.swift in Sources */,

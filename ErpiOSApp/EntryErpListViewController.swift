@@ -56,6 +56,17 @@ class EntryErpListViewController: UIViewController,UICollectionViewDataSource,UI
         return self.userModelGroups.count;
     }
     
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
+        let group = self.userModelGroups[indexPath.section];
+        let model = group.models![indexPath.row];
+        
+        let board =  UIStoryboard.init(name: model.board, bundle: nil);
+        let crmViewCtrl:UINavigationController = board.instantiateViewControllerWithIdentifier(model.controller) as! UINavigationController;
+        
+        self.presentViewController(crmViewCtrl, animated: true, completion: nil);
+    }
 
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 

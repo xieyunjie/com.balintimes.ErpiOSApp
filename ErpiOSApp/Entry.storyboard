@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="15B42" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cWW-Ec-RUG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="oth-dV-Ped">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Entry Login View Controller-->
         <scene sceneID="NFq-CS-0Nh">
             <objects>
-                <viewController id="cWW-Ec-RUG" customClass="EntryLoginViewController" customModule="merp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="cWW-Ec-RUG" customClass="EntryLoginViewController" customModule="ErpiOSApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fcY-lO-0OZ"/>
                         <viewControllerLayoutGuide type="bottom" id="7Re-eO-B1A"/>
@@ -19,7 +20,6 @@
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="用户名" textAlignment="natural" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="egU-C0-aO9">
                                 <rect key="frame" x="175" y="135" width="250" height="30"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="7ht-g1-dCT"/>
                                     <constraint firstAttribute="width" constant="250" id="z8Q-cP-r4a"/>
@@ -29,13 +29,11 @@
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="密码" textAlignment="natural" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="XYh-Za-4Ff">
                                 <rect key="frame" x="175" y="195" width="250" height="30"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xBa-t8-gpg">
                                 <rect key="frame" x="205" y="275" width="46" height="30"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="46" id="QFp-2d-qob"/>
                                     <constraint firstAttribute="height" constant="30" id="h0x-HP-lN8"/>
@@ -48,7 +46,6 @@
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7y9-Rz-VHS">
                                 <rect key="frame" x="349" y="275" width="46" height="30"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="重置">
                                     <color key="titleColor" red="0.50196081400000003" green="0.25098040700000002" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -59,14 +56,12 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i5Q-aj-oCY">
                                 <rect key="frame" x="175" y="235" width="250" height="30"/>
-                                <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Balintimes ERP APP" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h4O-ow-9ep">
                                 <rect key="frame" x="195" y="84" width="210" height="21"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="rGV-Np-jk0"/>
                                     <constraint firstAttribute="width" constant="210" id="rwN-4c-LLt"/>
@@ -76,7 +71,6 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="i5Q-aj-oCY" firstAttribute="height" secondItem="egU-C0-aO9" secondAttribute="height" id="4WJ-Zh-YeB"/>
@@ -113,7 +107,7 @@
         <!--常用功能-->
         <scene sceneID="5RN-Nm-uWx">
             <objects>
-                <viewController id="mdv-7J-Xtj" customClass="EntryCommonViewController" customModule="merp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="mdv-7J-Xtj" customClass="EntryCommonViewController" customModule="ErpiOSApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Ev6-sr-D9e"/>
                         <viewControllerLayoutGuide type="bottom" id="urp-Um-HHW"/>
@@ -124,7 +118,6 @@
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kuV-ln-opZ">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="7jD-wF-aQ9"/>
                                 </constraints>
@@ -135,7 +128,6 @@
                             </navigationBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="SS1-r3-EDs">
                                 <rect key="frame" x="0.0" y="51" width="600" height="499"/>
-                                <animations/>
                                 <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="b3v-y1-hvn">
                                     <size key="itemSize" width="70" height="80"/>
@@ -144,7 +136,7 @@
                                     <inset key="sectionInset" minX="2" minY="2" maxX="2" maxY="2"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="2PZ-DU-qB8" customClass="CommonViewCell" customModule="merp" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="2PZ-DU-qB8" customClass="CommonViewCell" customModule="ErpiOSApp" customModuleProvider="target">
                                         <rect key="frame" x="2" y="2" width="70" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -153,20 +145,16 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qEs-Fa-AbL">
                                                     <rect key="frame" x="10" y="5" width="50" height="50"/>
-                                                    <animations/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qlf-tJ-Lmx">
                                                     <rect key="frame" x="1" y="59" width="69" height="21"/>
-                                                    <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <animations/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <animations/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="imgIcon" destination="qEs-Fa-AbL" id="S1v-ad-7nC"/>
@@ -176,7 +164,6 @@
                                 </cells>
                             </collectionView>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="kuV-ln-opZ" firstAttribute="top" secondItem="nEN-Kf-4jN" secondAttribute="top" id="3NN-SM-7ln"/>
@@ -200,7 +187,7 @@
         <!--功能列表-->
         <scene sceneID="4UN-nj-otb">
             <objects>
-                <viewController id="OLK-3G-orZ" customClass="EntryErpListViewController" customModule="merp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="OLK-3G-orZ" customClass="EntryErpListViewController" customModule="ErpiOSApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dgP-Gg-MPq"/>
                         <viewControllerLayoutGuide type="bottom" id="jgY-hE-Rxh"/>
@@ -211,7 +198,6 @@
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kT4-2E-T7y">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="wXm-if-os8"/>
                                 </constraints>
@@ -221,7 +207,6 @@
                             </navigationBar>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="ZCd-I7-ShT">
                                 <rect key="frame" x="0.0" y="51" width="600" height="499"/>
-                                <animations/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="TLf-BN-339">
                                     <size key="itemSize" width="70" height="80"/>
@@ -230,7 +215,7 @@
                                     <inset key="sectionInset" minX="5" minY="0.0" maxX="5" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="erpcell" id="445-Zs-IUO" customClass="ErpListViewCell" customModule="merp" customModuleProvider="target">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="erpcell" id="445-Zs-IUO" customClass="ErpListViewCell" customModule="ErpiOSApp" customModuleProvider="target">
                                         <rect key="frame" x="5" y="40" width="70" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -239,33 +224,34 @@
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ck0-7y-xMC">
                                                     <rect key="frame" x="10" y="5" width="50" height="50"/>
-                                                    <animations/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1wj-tE-BeO">
                                                     <rect key="frame" x="2" y="61" width="68" height="21"/>
-                                                    <animations/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
-                                            <animations/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <animations/>
                                         <connections>
                                             <outlet property="imgIcon" destination="ck0-7y-xMC" id="blh-RS-1O3"/>
                                             <outlet property="lblIntro" destination="1wj-tE-BeO" id="JD5-XE-RIv"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
-                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="header" id="UGN-Oz-h46" customClass="ErpListViewHeader" customModule="merp" customModuleProvider="target">
+                                <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="header" id="UGN-Oz-h46" customClass="ErpListViewHeader" customModule="ErpiOSApp" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="40"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zmq-1k-mBw">
+                                            <rect key="frame" x="504" y="11" width="38" height="18"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                         <button opaque="NO" contentMode="center" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="ahL-k3-gaC">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="40"/>
-                                            <animations/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <inset key="titleEdgeInsets" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                             <inset key="imageEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -277,15 +263,7 @@
                                                 <action selector="btnGroupClick:" destination="UGN-Oz-h46" eventType="touchUpInside" id="veH-KO-Tx5"/>
                                             </connections>
                                         </button>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zmq-1k-mBw">
-                                            <rect key="frame" x="502" y="10" width="40" height="20"/>
-                                            <animations/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
-                                    <animations/>
                                     <constraints>
                                         <constraint firstAttribute="bottom" secondItem="ahL-k3-gaC" secondAttribute="bottom" id="CHh-xr-HFp"/>
                                         <constraint firstAttribute="trailing" secondItem="ahL-k3-gaC" secondAttribute="trailing" id="Eg5-CZ-TeU"/>
@@ -301,7 +279,6 @@
                                 </collectionReusableView>
                             </collectionView>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="kT4-2E-T7y" firstAttribute="leading" secondItem="PCq-sE-GAN" secondAttribute="leading" id="13E-hI-qxE"/>
@@ -325,7 +302,7 @@
         <!--个人设置-->
         <scene sceneID="W0c-1A-1Uq">
             <objects>
-                <viewController id="Eff-e4-ous" customClass="EntryUserViewController" customModule="merp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Eff-e4-ous" customClass="EntryUserViewController" customModule="ErpiOSApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9kQ-Mc-g5y"/>
                         <viewControllerLayoutGuide type="bottom" id="XYO-Qm-Nn7"/>
@@ -336,7 +313,6 @@
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GOd-U9-wSJ">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="ut9-HA-Cj7"/>
                                 </constraints>
@@ -345,7 +321,6 @@
                                 </items>
                             </navigationBar>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="GOd-U9-wSJ" secondAttribute="trailing" id="09L-z4-fYc"/>
@@ -373,7 +348,6 @@
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dkQ-8s-aNv">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="50"/>
-                                <animations/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="50" id="uIk-wg-eUs"/>
                                 </constraints>
@@ -382,7 +356,6 @@
                                 </items>
                             </navigationBar>
                         </subviews>
-                        <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="dkQ-8s-aNv" firstAttribute="top" secondItem="mxO-fw-RWZ" secondAttribute="top" id="YSv-Gl-70I"/>
@@ -403,7 +376,6 @@
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="U0Q-vw-Euv">
                         <autoresizingMask key="autoresizingMask"/>
-                        <animations/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
