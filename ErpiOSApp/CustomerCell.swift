@@ -32,7 +32,8 @@ class CustomerCell: UITableViewCell {
     }
     
     func setCellValue(value:String){
-        self.lblCustomerName.text = value;
+        self.lblCustomerName.text = "百事可乐百事可乐百事可乐";
+        self.lblBrandName.text = "乐事薯片乐事薯片乐事薯片"
         
         self.lblSignDate.text = "2015-09-09";
         

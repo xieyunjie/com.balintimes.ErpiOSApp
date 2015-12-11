@@ -101,6 +101,9 @@ class CRMCustomerSignViewController: UIViewController,CRMCustomerSignFormControl
         if let d = self.delegate{
             d.saveSuccessful(false);
         }
+        else{
+            self.dismissViewControllerAnimated(true, completion: nil);
+        }
     }
     /*
     // MARK: - Navigation
