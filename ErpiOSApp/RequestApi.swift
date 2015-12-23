@@ -232,7 +232,13 @@ struct RequestApi{
         
         print(AppSetting.BaseUrl + UrlString.URLString);
         
-        Alamofire.request(method,  AppSetting.BaseUrl + UrlString.URLString, parameters: parameters, encoding: ParameterEncoding.JSON, headers: nil).responseJSON { ( res:Response<AnyObject, NSError>) -> Void in
+        var headers = Dictionary<String,String>();
+        if let token = userToken(){
+            
+            headers["Authorization"] = "Bearer " + token;
+        }
+        
+        Alamofire.request(method,  AppSetting.BaseUrl + UrlString.URLString, parameters: parameters, encoding: ParameterEncoding.JSON, headers: headers).responseJSON { ( res:Response<AnyObject, NSError>) -> Void in
             
             if res.result.isFailure == true{
                 
@@ -253,7 +259,15 @@ struct RequestApi{
         
         print(AppSetting.BaseUrl + UrlString.URLString);
         
-        Alamofire.request(method, AppSetting.BaseUrl + UrlString.URLString, parameters: parameters, encoding: ParameterEncoding.JSON, headers: nil).responseJSON { ( res:Response<AnyObject, NSError>) -> Void in
+        var headers = Dictionary<String,String>();
+        if let token = userToken(){
+            
+            headers["Authorization"] = "Bearer " + token;
+        }
+        
+        Alamofire.request(method, AppSetting.BaseUrl + UrlString.URLString, parameters: parameters, encoding: ParameterEncoding.JSON, headers: headers).responseJSON { ( res:Response<AnyObject, NSError>) -> Void in
+            
+             print(res.result.value);
             
             if res.result.isFailure == true{
                 
@@ -266,6 +280,11 @@ struct RequestApi{
             success(res.data!);
             
         }
+    }
+    
+    private static func userToken() -> String?{
+    
+        return UserDefaultsData.userToken();
     }
     
     // upload
@@ -300,8 +319,13 @@ struct RequestApi{
             multipart.appendBodyPart(data: data, name: key);
         }
         
+        var headers = Dictionary<String,String>();
+        if let token = userToken(){
+            
+            headers["Authorization"] = "Bearer " + token;
+        }
         
-        Alamofire.upload(.POST, AppSetting.BaseUrl + UrlString.URLString, headers: nil, multipartFormData: { (multipart) -> Void in
+        Alamofire.upload(.POST, AppSetting.BaseUrl + UrlString.URLString, headers: headers, multipartFormData: { (multipart) -> Void in
             
             for (key,url) in filesDic{
                 multipart.appendBodyPart(fileURL: url, name: key);

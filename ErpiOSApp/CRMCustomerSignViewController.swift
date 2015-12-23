@@ -71,7 +71,7 @@ class CRMCustomerSignViewController: UIViewController,CRMCustomerSignFormControl
         
         let hub = BlockMsg.showLoading(self.view);
         
-        RequestApi.post(AppSetting.CrmUrl.signCustomerUrl.rawValue, result.customer.ToDictionory()) { (res:ResponseData<BaseModel>) -> Void in
+        RequestApi.post(CrmReq.signCustomerUrl.rawValue, result.customer.ToDictionory()) { (res:ResponseData<BaseModel>) -> Void in
             BlockMsg.hideLoading(hub);
             
             if res.success == true{

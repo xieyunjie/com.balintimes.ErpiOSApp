@@ -57,7 +57,7 @@ class CityPickerViewController: DataPickerViewController,UIPickerViewDelegate,UI
         
 //        MBProgressHUD.showHUDAddedTo(self.view, animated: true);
         let hud = BlockMsg.showLoading(self.view);
-        RequestApi.get(AppSetting.CrmUrl.provinceUrl.rawValue, nil) { (res:ResponseData<Province>) -> Void in
+        RequestApi.get(CrmReq.provinceUrl.rawValue, nil) { (res:ResponseData<Province>) -> Void in
              BlockMsg.hideLoading(hud);
             if res.success == true{
                 self.provinces = res.list;
@@ -149,7 +149,7 @@ class CityPickerViewController: DataPickerViewController,UIPickerViewDelegate,UI
             if let p = province{
 ////                MBProgressHUD.showHUDAddedTo(self.view, animated: true);
                 let hud = BlockMsg.showLoading(self.view);
-                RequestApi.get("\(AppSetting.CrmUrl.cityUrl.rawValue)/\(p.id!)", nil, completion: { (res:ResponseData<City>) -> Void in
+                RequestApi.get("\(CrmReq.cityUrl.rawValue)/\(p.id!)", nil, completion: { (res:ResponseData<City>) -> Void in
                     BlockMsg.hideLoading(hud);
                     if res.success == true{
                         self.cities = res.list;

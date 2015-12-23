@@ -1,15 +1,55 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="oth-dV-Ped">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Nnx-EQ-GVh">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Entry Blank View Controller-->
+        <scene sceneID="d9q-2S-a8L">
+            <objects>
+                <viewController id="Nnx-EQ-GVh" customClass="EntryBlankViewController" customModule="ErpiOSApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Yi4-Cy-ZUA"/>
+                        <viewControllerLayoutGuide type="bottom" id="4PB-vm-tgo"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="bfZ-92-d7G">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VIk-X4-L3t">
+                                <rect key="frame" x="14" y="33" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="segue:" destination="Nnx-EQ-GVh" eventType="touchUpInside" id="UwT-kT-i2z"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.80000001190000003" green="0.80000001190000003" blue="0.80000001190000003" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="VIk-X4-L3t" firstAttribute="top" secondItem="Yi4-Cy-ZUA" secondAttribute="bottom" constant="13" id="Bu9-OZ-t9Y"/>
+                            <constraint firstItem="VIk-X4-L3t" firstAttribute="leading" secondItem="bfZ-92-d7G" secondAttribute="leadingMargin" constant="-6" id="VnT-zY-PgW"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="VIk-X4-L3t"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <segue destination="cWW-Ec-RUG" kind="show" identifier="segueToLoginView" id="JcM-j0-MOb"/>
+                        <segue destination="oth-dV-Ped" kind="show" identifier="segueToMainView" id="gXO-sa-qvr"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QwW-0L-wNH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="725" y="-373"/>
+        </scene>
         <!--Entry Login View Controller-->
         <scene sceneID="NFq-CS-0Nh">
             <objects>
-                <viewController id="cWW-Ec-RUG" customClass="EntryLoginViewController" customModule="ErpiOSApp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="entryLoginView" id="cWW-Ec-RUG" customClass="EntryLoginViewController" customModule="ErpiOSApp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fcY-lO-0OZ"/>
                         <viewControllerLayoutGuide type="bottom" id="7Re-eO-B1A"/>
@@ -320,12 +360,28 @@
                                     <navigationItem title="用户设置" id="6Sh-ap-Bop"/>
                                 </items>
                             </navigationBar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="16v-Q1-ub2">
+                                <rect key="frame" x="175" y="70" width="250" height="33"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="dTZ-QS-B1d"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="退  出">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="btnExitClick:" destination="Eff-e4-ous" eventType="touchUpInside" id="0XD-KW-bLG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="GOd-U9-wSJ" secondAttribute="trailing" id="09L-z4-fYc"/>
                             <constraint firstItem="GOd-U9-wSJ" firstAttribute="top" secondItem="hY9-of-2Ai" secondAttribute="top" id="9c3-YQ-xsR"/>
+                            <constraint firstItem="16v-Q1-ub2" firstAttribute="centerX" secondItem="hY9-of-2Ai" secondAttribute="centerX" id="FII-F7-Flb"/>
                             <constraint firstItem="GOd-U9-wSJ" firstAttribute="leading" secondItem="hY9-of-2Ai" secondAttribute="leading" id="W6W-zZ-xc7"/>
+                            <constraint firstItem="16v-Q1-ub2" firstAttribute="top" secondItem="GOd-U9-wSJ" secondAttribute="bottom" constant="20" id="fyD-o6-9qj"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="个人设置" id="Kse-qt-N5w"/>
@@ -372,7 +428,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="Tio-LD-Qkl">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="oth-dV-Ped" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="entryMainView" automaticallyAdjustsScrollViewInsets="NO" id="oth-dV-Ped" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="U0Q-vw-Euv">
                         <autoresizingMask key="autoresizingMask"/>
@@ -395,4 +451,7 @@
         <image name="buddy_header_bg" width="2" height="89"/>
         <image name="buddy_header_bg_highlighted" width="2" height="89"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="gXO-sa-qvr"/>
+    </inferredMetricsTieBreakers>
 </document>

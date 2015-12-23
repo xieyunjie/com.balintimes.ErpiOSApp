@@ -21,6 +21,28 @@ class EntryUserViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func btnExitClick(sender: AnyObject) {
+        
+        RequestApi.get(LoginReq.signoutUrl.rawValue, nil) { (res:ResponseData<BaseModel>) -> Void in
+            
+            if res.success == true{
+                UserDefaultsData.resetUserToken();
+                
+                if let w = self.view.window{
+                    
+                    let board =  UIStoryboard.init(name: "Entry", bundle: nil);
+                    let rootViewCtrl:EntryLoginViewController = board.instantiateViewControllerWithIdentifier("entryLoginView") as! EntryLoginViewController;
+                    w.rootViewController = rootViewCtrl;
+                    
+                    w.makeKeyAndVisible()
+                    
+                }
+            }
+            else{
+                BlockMsg.showText(self.view, msg: "退出失败", afterDelay: 2.5);
+            }
+        }
+    }
 
     /*
     // MARK: - Navigation

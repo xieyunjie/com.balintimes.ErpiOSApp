@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		73EF62145072FAE31BE09368 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81A150C0B05BD2FAD22D4DAA /* Pods.framework */; };
+		9A5598CE1C28F85A0040919A /* UserDefaultsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5598CD1C28F8590040919A /* UserDefaultsData.swift */; };
+		9A5598D01C2901360040919A /* WebUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5598CF1C2901360040919A /* WebUser.swift */; };
 		9A7A849B1C191B0C0024A310 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A849A1C191B0C0024A310 /* AppDelegate.swift */; };
 		9A7A84A31C191B0C0024A310 /* ErpiOSApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A84A11C191B0C0024A310 /* ErpiOSApp.xcdatamodeld */; };
 		9A7A84A51C191B0C0024A310 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9A7A84A41C191B0C0024A310 /* Assets.xcassets */; };
@@ -50,11 +52,16 @@
 		9A7A85071C192D880024A310 /* BlockMsg.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A85061C192D880024A310 /* BlockMsg.swift */; };
 		9A7A850B1C1A6C640024A310 /* CRMCustomerListController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A850A1C1A6C640024A310 /* CRMCustomerListController.swift */; };
 		9A7A850D1C1A6D550024A310 /* CustomerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A850C1C1A6D550024A310 /* CustomerCell.swift */; };
+		9A9FDB6D1C2A8DE4005C05C0 /* LoginReq.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9FDB6C1C2A8DE4005C05C0 /* LoginReq.swift */; };
+		9A9FDB6F1C2A8E1A005C05C0 /* CrmReq.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9FDB6E1C2A8E1A005C05C0 /* CrmReq.swift */; };
+		9A9FDB711C2AA59B005C05C0 /* EntryBlankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9FDB701C2AA59B005C05C0 /* EntryBlankViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		7C905B7D984955C1491D1B8B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		81A150C0B05BD2FAD22D4DAA /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A5598CD1C28F8590040919A /* UserDefaultsData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsData.swift; sourceTree = "<group>"; };
+		9A5598CF1C2901360040919A /* WebUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebUser.swift; sourceTree = "<group>"; };
 		9A7A84971C191B0C0024A310 /* ErpiOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ErpiOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9A7A849A1C191B0C0024A310 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9A7A84A21C191B0C0024A310 /* ErpiOSApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ErpiOSApp.xcdatamodel; sourceTree = "<group>"; };
@@ -100,6 +107,9 @@
 		9A7A85061C192D880024A310 /* BlockMsg.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlockMsg.swift; sourceTree = "<group>"; };
 		9A7A850A1C1A6C640024A310 /* CRMCustomerListController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRMCustomerListController.swift; sourceTree = "<group>"; };
 		9A7A850C1C1A6D550024A310 /* CustomerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomerCell.swift; sourceTree = "<group>"; };
+		9A9FDB6C1C2A8DE4005C05C0 /* LoginReq.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginReq.swift; sourceTree = "<group>"; };
+		9A9FDB6E1C2A8E1A005C05C0 /* CrmReq.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrmReq.swift; sourceTree = "<group>"; };
+		9A9FDB701C2AA59B005C05C0 /* EntryBlankViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryBlankViewController.swift; sourceTree = "<group>"; };
 		C995F20DCCE76B420B764054 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -195,6 +205,7 @@
 				9A7A84BC1C191F320024A310 /* EntryErpListViewController.swift */,
 				9A7A84BD1C191F320024A310 /* EntryCommonViewController.swift */,
 				9A7A84BE1C191F320024A310 /* EntryUserViewController.swift */,
+				9A9FDB701C2AA59B005C05C0 /* EntryBlankViewController.swift */,
 			);
 			name = Entry;
 			sourceTree = "<group>";
@@ -217,6 +228,7 @@
 				9A7A84CA1C191F7F0024A310 /* BaseModel.swift */,
 				9A7A84CB1C191F7F0024A310 /* Customer.swift */,
 				9A7A84CC1C191F7F0024A310 /* Brand.swift */,
+				9A5598CF1C2901360040919A /* WebUser.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -224,6 +236,7 @@
 		9A7A84D41C191F870024A310 /* service */ = {
 			isa = PBXGroup;
 			children = (
+				9A9FDB6B1C2A8DA6005C05C0 /* url */,
 				9A7A84D51C191F900024A310 /* RequestApi.swift */,
 			);
 			name = service;
@@ -246,6 +259,7 @@
 			children = (
 				9A7A84DD1C191FCC0024A310 /* DlgMsg.swift */,
 				9A7A85061C192D880024A310 /* BlockMsg.swift */,
+				9A5598CD1C28F8590040919A /* UserDefaultsData.swift */,
 			);
 			name = util;
 			sourceTree = "<group>";
@@ -279,6 +293,15 @@
 				9A7A850C1C1A6D550024A310 /* CustomerCell.swift */,
 			);
 			name = xib;
+			sourceTree = "<group>";
+		};
+		9A9FDB6B1C2A8DA6005C05C0 /* url */ = {
+			isa = PBXGroup;
+			children = (
+				9A9FDB6C1C2A8DE4005C05C0 /* LoginReq.swift */,
+				9A9FDB6E1C2A8E1A005C05C0 /* CrmReq.swift */,
+			);
+			name = url;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -413,6 +436,7 @@
 			files = (
 				9A7A84C21C191F320024A310 /* EntryUserViewController.swift in Sources */,
 				9A7A84D31C191F7F0024A310 /* Brand.swift in Sources */,
+				9A5598CE1C28F85A0040919A /* UserDefaultsData.swift in Sources */,
 				9A7A850B1C1A6C640024A310 /* CRMCustomerListController.swift in Sources */,
 				9A7A84A31C191B0C0024A310 /* ErpiOSApp.xcdatamodeld in Sources */,
 				9A7A84B81C191F210024A310 /* CRMDemoViewController.swift in Sources */,
@@ -428,9 +452,12 @@
 				9A7A84C01C191F320024A310 /* EntryErpListViewController.swift in Sources */,
 				9A7A84F81C191FED0024A310 /* BaseActionSheetPickerView.swift in Sources */,
 				9A7A84BF1C191F320024A310 /* EntryLoginViewController.swift in Sources */,
+				9A9FDB6D1C2A8DE4005C05C0 /* LoginReq.swift in Sources */,
 				9A7A84FC1C191FED0024A310 /* DatePickerViewController.swift in Sources */,
 				9A7A84F91C191FED0024A310 /* CommonViewCell.swift in Sources */,
 				9A7A84F71C191FED0024A310 /* CityPicker.swift in Sources */,
+				9A9FDB711C2AA59B005C05C0 /* EntryBlankViewController.swift in Sources */,
+				9A9FDB6F1C2A8E1A005C05C0 /* CrmReq.swift in Sources */,
 				9A7A84FE1C191FED0024A310 /* DataPickerViewController.swift in Sources */,
 				9A7A84CF1C191F7F0024A310 /* UserModel.swift in Sources */,
 				9A7A85051C19269C0024A310 /* CityPickerViewController.swift in Sources */,
@@ -442,6 +469,7 @@
 				9A7A84CE1C191F7F0024A310 /* City.swift in Sources */,
 				9A7A84D61C191F900024A310 /* RequestApi.swift in Sources */,
 				9A7A84B01C191ED60024A310 /* AppSetting.swift in Sources */,
+				9A5598D01C2901360040919A /* WebUser.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

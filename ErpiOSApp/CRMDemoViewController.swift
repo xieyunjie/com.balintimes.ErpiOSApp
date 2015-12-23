@@ -8,6 +8,7 @@
 
 import UIKit
 import MBProgressHUD
+import JWT
 
 class CRMDemoViewController: UIViewController,UINavigationControllerDelegate,UIImagePickerControllerDelegate,UITextFieldDelegate {
 
@@ -153,6 +154,43 @@ class CRMDemoViewController: UIViewController,UINavigationControllerDelegate,UII
                 print(err);
                 MBProgressHUD.hideHUDForView(self.view, animated: true);
         }
+    }
+    @IBAction func signClick(sender: AnyObject) {
+        RequestApi.post(LoginReq.signinUrl.rawValue, nil) { (res:ResponseData<WebUser>) -> Void in
+            
+            
+            UserDefaultsData.userToken(res.model?.token);
+            
+            print(UserDefaultsData.userToken()!);
+            
+        }
+    }
+    @IBAction func showtoken(sender: AnyObject) {
+        
+//        let urlRequest = NSMutableURLRequest(URL: NSURL(string: AppSetting.BaseUrl + LoginReq.verifyUrl.rawValue)!)
+//        urlRequest.addValue("", forHTTPHeaderField: "");
+//        
+//        let session = NSURLSession.sharedSession();
+//        
+////        var response: AutoreleasingUnsafeMutablePointer<NSURLResponse>;
+//        let data = session.data
+        
+        
+//        UserDefaultsData.resetUserToken();
+//        
+//        RequestApi.post("crm/saveprovince", nil) { (res:ResponseData<Province>) -> Void in
+//            if res.success == false{
+//                BlockMsg.showText(self.view, msg: res.msg, afterDelay: 2.0);
+//            }
+//        }
+//        do{
+//            let payload = try JWT.decode(UserDefaultsData.userToken()!, algorithm: Algorithm.HS256(AppSetting.JWT.secret.rawValue));
+//            print(payload)
+//        }
+//        catch{
+//            print("Failed to decode JWT: \(error)")
+//        }
+    
     }
     /*
     // MARK: - Navigation

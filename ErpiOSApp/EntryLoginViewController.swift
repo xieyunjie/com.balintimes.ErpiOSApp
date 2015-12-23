@@ -22,27 +22,45 @@ class EntryLoginViewController: UIViewController {
             let username = self.txtUserName.text!;
             let password = self.txtPassword.text!;
             
-            if username == password{
-                
-                self.performSegueWithIdentifier("entryErpList", sender: self);
-            }
-            else{
-                let alertV = DlgMsg.alert("提示", "登录失败 用户名或密码录入有误", handler: { (action) -> Void in
-                    self.txtUserName.becomeFirstResponder();
-                })
-                
-                self .presentViewController(alertV, animated: true, completion: { () -> Void in
-//                    self.txtUserName.becomeFirstResponder();
-                    print("completion");
-                })
-            }
+            let block = BlockMsg.showLoading(self.view);
             
-        }else{
-            let alertV = DlgMsg.alert("提示", "用户名或密码录入有误",handler:nil);
-            self .presentViewController(alertV, animated: true, completion: { () -> Void in
-//                self.txtUserName.becomeFirstResponder();
+            RequestApi.post(LoginReq.signinUrl.rawValue, ["username":username,"password":password], completion: { (res:ResponseData<WebUser>) -> Void in
+                
+                BlockMsg.hideLoading(block);
+                
+                if res.success == true{
+                      UserDefaultsData.userToken(res.model?.token);
+                    self.performSegueWithIdentifier("entryErpList", sender: self);
+                }
+                else{
+                    BlockMsg.showText(self.view, msg: "登录失败", afterDelay: 2.5);
+                    self.txtUserName.becomeFirstResponder();
+                }
                 
             })
+            
+            
+//            if username == password{
+//                
+//                self.performSegueWithIdentifier("entryErpList", sender: self);
+//            }
+//            else{
+//                let alertV = DlgMsg.alert("提示", "登录失败 用户名或密码录入有误", handler: { (action) -> Void in
+//                    self.txtUserName.becomeFirstResponder();
+//                })
+//                
+//                self .presentViewController(alertV, animated: true, completion: { () -> Void in
+////                    self.txtUserName.becomeFirstResponder();
+//                    print("completion");
+//                })
+//            }
+//            
+//        }else{
+//            let alertV = DlgMsg.alert("提示", "用户名或密码录入有误",handler:nil);
+//            self .presentViewController(alertV, animated: true, completion: { () -> Void in
+////                self.txtUserName.becomeFirstResponder();
+//                
+//            })
         }
         
     }

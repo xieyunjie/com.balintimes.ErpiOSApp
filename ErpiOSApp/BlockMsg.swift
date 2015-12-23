@@ -44,21 +44,20 @@ struct BlockMsg {
                     c();
                 }
         }
-    
+        
     }
     static func showText(view:UIView!,msg:String,afterDelay:Double){
         let HUD = MBProgressHUD.showHUDAddedTo(view, animated: true);
         HUD.mode = MBProgressHUDMode.Text;
         HUD.dimBackground  = true;
-        HUD.labelText = msg;
-        HUD.detailsLabelText = "详细信息";
+        HUD.labelText = "系统提示";
+        HUD.detailsLabelText = msg;
         
         HUD.show(true);
         
-        
-        
         HUD.hide(true, afterDelay: afterDelay);
     }
+    
     static func showText(view:UIView!,msg:String,afterDelay:UInt32,completion:(() -> Void)?){
         let HUD = MBProgressHUD.showHUDAddedTo(view, animated: true);
         HUD.mode = MBProgressHUDMode.Text;
@@ -74,9 +73,6 @@ struct BlockMsg {
                     c();
                 }
         }
-        
-        
-        
     }
     
     static func showDuring(view:UIView!,completeAction:(() -> Void)?){
