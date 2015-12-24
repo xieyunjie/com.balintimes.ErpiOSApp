@@ -101,9 +101,9 @@ class CRMCustomerListController: UITableViewController,CRMCustomerSignViewContro
 //        actionSheet.addTextFieldWithConfigurationHandler { (txt:UITextField) -> Void in
 //            
 //        }
-        
-        let mainView = actionSheet.view.subviews[0].subviews[0].subviews[0].subviews[0].subviews[0].subviews[2];
-        print(mainView);
+//        
+//        let mainView = actionSheet.view.subviews[0].subviews[0].subviews[0].subviews[0].subviews[0].subviews[2];
+//        print(mainView);
 //        for v in mainView.subviews{
 //            print(v);
 //        }
@@ -139,6 +139,10 @@ class CRMCustomerListController: UITableViewController,CRMCustomerSignViewContro
             signCtrl.editCustomer = self.didSelectCustomer;
             signCtrl.delegate = self;
         }
+        else if segue.identifier == "segueCRMAttUpload"{
+            let uploadCtrl = segue.destinationViewController as! CRMCustomerAttachmentUploadController; 
+        }
+        
         
     }
     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
@@ -154,7 +158,7 @@ class CRMCustomerListController: UITableViewController,CRMCustomerSignViewContro
         self.dismissViewControllerAnimated(true, completion: nil);
     }
     
-    
+  
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

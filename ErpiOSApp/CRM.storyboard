@@ -739,8 +739,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <action selector="btnCancelClick:" destination="mRm-LM-w6e" eventType="touchUpInside" id="W0n-7O-6MT"/>
-                                            <action selector="btnCancelClick:" destination="Xjr-L0-nWt" eventType="touchDragInside" id="d7B-UF-Qmt"/>
+                                            <action selector="btnCancelClick:" destination="Xjr-L0-nWt" eventType="touchUpInside" id="edb-c5-Bts"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="goo-WI-i30">
@@ -784,7 +783,7 @@
                                     <constraint firstAttribute="height" constant="60" id="EAI-vV-LW0"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
                             </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

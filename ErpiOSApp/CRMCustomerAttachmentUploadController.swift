@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CRMCustomerAttachmentUploadController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+class CRMCustomerAttachmentUploadController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITextFieldDelegate {
     
     @IBOutlet weak var txtComment: UITextField!
     var isSelected = false;
@@ -16,6 +16,7 @@ class CRMCustomerAttachmentUploadController: UIViewController,UIImagePickerContr
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.txtComment.delegate = self;
         
         // Do any additional setup after loading the view.
     }
@@ -23,6 +24,11 @@ class CRMCustomerAttachmentUploadController: UIViewController,UIImagePickerContr
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder();
+        
+        return true;
     }
     
     @IBAction func btnSaveClick(sender: AnyObject) {
@@ -47,8 +53,11 @@ class CRMCustomerAttachmentUploadController: UIViewController,UIImagePickerContr
             BlockMsg.hideLoading(block); 
             
             if res.success == true{
-                BlockMsg.showText(self.view, msg: "上传成功", afterDelay: 2.0);
-                self.dismissViewControllerAnimated(true, completion: nil);
+                
+                BlockMsg.showText(self.view, msg: "上传成功", afterDelay: 2, completion: { () -> Void in
+                    self.navigationController?.popViewControllerAnimated(true);
+                })
+                
             }
             else{
                 BlockMsg.showText(self.view, msg: "上传失败 -- \(res.msg)", afterDelay: 2.0);
@@ -66,7 +75,8 @@ class CRMCustomerAttachmentUploadController: UIViewController,UIImagePickerContr
     }
     
     @IBAction func btnCancelClick(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil);
+        print("cancel");
+        self.navigationController?.popViewControllerAnimated(true);
     }
     
     @IBAction func imgAttachmentClick(sender: AnyObject) {
