@@ -10,8 +10,11 @@ import UIKit
 
 class EntryUserViewController: UIViewController {
 
+    @IBOutlet weak var txtJwt: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        txtJwt.text = UserDefaultsData.userToken();
 
         // Do any additional setup after loading the view.
     }

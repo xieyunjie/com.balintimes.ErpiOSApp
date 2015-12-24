@@ -11,10 +11,10 @@ import MBProgressHUD
 
 struct BlockMsg {
     
-    static func showLoading(view:UIView!) -> MBProgressHUD{
+    static func showLoading(view:UIView!,msg:String? = nil) -> MBProgressHUD{
         let HUD = MBProgressHUD.showHUDAddedTo(view, animated: true);
         
-        HUD.labelText = "正在加载 ...";
+        HUD.labelText = (msg == nil ? "正在加载 ..." : msg);
         HUD.dimBackground = true;
         
         HUD.show(true);

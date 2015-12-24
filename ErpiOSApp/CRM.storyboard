@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cjJ-7H-f1H">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -70,13 +70,6 @@
                                     <action selector="txtDateClick:" destination="cjJ-7H-f1H" eventType="touchDown" id="jSM-dL-UuB"/>
                                 </connections>
                             </textField>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ib7-XR-nuR">
-                                <rect key="frame" x="13" y="181" width="100" height="100"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="Oyl-Ku-IXT"/>
-                                    <constraint firstAttribute="height" constant="100" id="yWI-iT-Rgs"/>
-                                </constraints>
-                            </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="33o-Px-9UF">
                                 <rect key="frame" x="13" y="301" width="25" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -102,6 +95,21 @@
                                     <action selector="showtoken:" destination="cjJ-7H-f1H" eventType="touchUpInside" id="pZP-VM-kMq"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bzD-b0-0oV">
+                                <rect key="frame" x="315" y="214" width="162" height="132"/>
+                                <state key="normal" title="Button" backgroundImage="gift"/>
+                            </button>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ib7-XR-nuR">
+                                <rect key="frame" x="13" y="181" width="100" height="100"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Oyl-Ku-IXT"/>
+                                    <constraint firstAttribute="height" constant="100" id="yWI-iT-Rgs"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="4oG-7V-chr" appends="YES" id="IWx-5k-eAH"/>
+                                </connections>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -139,8 +147,13 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="sa2-cJ-ezq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="4oG-7V-chr">
+                    <connections>
+                        <action selector="imgClick:" destination="cjJ-7H-f1H" id="Le0-eD-G6I"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="4191" y="665"/>
+            <point key="canvasLocation" x="2259" y="627"/>
         </scene>
         <!--客户登记-->
         <scene sceneID="lDG-iJ-uMa">
@@ -225,7 +238,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cpH-Qh-Jcc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4191" y="1313"/>
+            <point key="canvasLocation" x="4339" y="-73"/>
         </scene>
         <!--Customer Sign Form Controller-->
         <scene sceneID="tOm-PN-UoC">
@@ -675,7 +688,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lNy-nR-hDN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4945" y="1312"/>
+            <point key="canvasLocation" x="5433" y="-73"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4Pz-Vd-My1">
@@ -693,7 +706,134 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5be-zJ-Mhx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3379" y="1313"/>
+            <point key="canvasLocation" x="3319" y="-73"/>
+        </scene>
+        <!--附件上传-->
+        <scene sceneID="ivu-SF-ciK">
+            <objects>
+                <viewController id="Xjr-L0-nWt" customClass="CRMCustomerAttachmentUploadController" customModule="ErpiOSApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FzS-aw-zRq"/>
+                        <viewControllerLayoutGuide type="bottom" id="9g0-fR-oCc"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Lk2-Cc-A38">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="备注：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KWd-Ot-Whb">
+                                <rect key="frame" x="30" y="94" width="51" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="55O-Ml-cfl" userLabel="btnView">
+                                <rect key="frame" x="0.0" y="565" width="600" height="35"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O85-eY-QzV">
+                                        <rect key="frame" x="320" y="3" width="80" height="30"/>
+                                        <color key="backgroundColor" red="1" green="0.5" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="opY-Cx-mDq"/>
+                                        </constraints>
+                                        <state key="normal" title="取消">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btnCancelClick:" destination="mRm-LM-w6e" eventType="touchUpInside" id="W0n-7O-6MT"/>
+                                            <action selector="btnCancelClick:" destination="Xjr-L0-nWt" eventType="touchDragInside" id="d7B-UF-Qmt"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="goo-WI-i30">
+                                        <rect key="frame" x="200" y="3" width="80" height="30"/>
+                                        <color key="backgroundColor" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="80" id="T1M-f2-hQB"/>
+                                        </constraints>
+                                        <state key="normal" title="保存">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="btnSaveClick:" destination="Xjr-L0-nWt" eventType="touchUpInside" id="ci5-2Y-o4t"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="centerX" secondItem="O85-eY-QzV" secondAttribute="leading" constant="-20" id="4Tn-84-qfm"/>
+                                    <constraint firstItem="O85-eY-QzV" firstAttribute="centerY" secondItem="55O-Ml-cfl" secondAttribute="centerY" id="AXw-sl-jB3"/>
+                                    <constraint firstItem="goo-WI-i30" firstAttribute="centerY" secondItem="55O-Ml-cfl" secondAttribute="centerY" id="M5M-0m-lYv"/>
+                                    <constraint firstAttribute="height" constant="35" id="a65-Vd-2Cm"/>
+                                    <constraint firstAttribute="centerX" secondItem="goo-WI-i30" secondAttribute="trailing" constant="20" id="y1W-0j-YSa"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="35" id="yh5-ln-ADz"/>
+                                </constraints>
+                            </view>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="addAttechment" translatesAutoresizingMaskIntoConstraints="NO" id="zMD-zX-pjD">
+                                <rect key="frame" x="200" y="164" width="200" height="200"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="T0C-vg-bIz"/>
+                                    <constraint firstAttribute="height" constant="200" id="bdN-GP-qn3"/>
+                                </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="emE-fm-p5o" appends="YES" id="N5q-A2-nKZ"/>
+                                </connections>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DaM-FJ-b3U">
+                                <rect key="frame" x="91" y="94" width="459" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="EAI-vV-LW0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="KWd-Ot-Whb" firstAttribute="top" secondItem="FzS-aw-zRq" secondAttribute="bottom" constant="30" id="8qn-wR-xxx"/>
+                            <constraint firstItem="55O-Ml-cfl" firstAttribute="leading" secondItem="Lk2-Cc-A38" secondAttribute="leading" id="AlI-Lk-VYa"/>
+                            <constraint firstItem="zMD-zX-pjD" firstAttribute="top" secondItem="DaM-FJ-b3U" secondAttribute="bottom" constant="10" id="NNp-Ov-rNN"/>
+                            <constraint firstItem="KWd-Ot-Whb" firstAttribute="leading" secondItem="Lk2-Cc-A38" secondAttribute="leadingMargin" constant="10" id="Ocw-Nh-6sL"/>
+                            <constraint firstItem="9g0-fR-oCc" firstAttribute="top" secondItem="55O-Ml-cfl" secondAttribute="bottom" id="P81-Z7-kpi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="DaM-FJ-b3U" secondAttribute="trailing" constant="30" id="UXu-xJ-uiy"/>
+                            <constraint firstItem="DaM-FJ-b3U" firstAttribute="top" secondItem="KWd-Ot-Whb" secondAttribute="top" id="W3o-GR-iTe"/>
+                            <constraint firstItem="zMD-zX-pjD" firstAttribute="centerX" secondItem="Lk2-Cc-A38" secondAttribute="centerX" id="gNG-Vy-BM5"/>
+                            <constraint firstAttribute="trailing" secondItem="55O-Ml-cfl" secondAttribute="trailing" id="ozL-Ta-SRz"/>
+                            <constraint firstItem="DaM-FJ-b3U" firstAttribute="leading" secondItem="KWd-Ot-Whb" secondAttribute="trailing" constant="10" id="pQC-3v-cpl"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="附件上传" id="1vc-uE-D3B"/>
+                    <connections>
+                        <outlet property="imgAttechment" destination="zMD-zX-pjD" id="0mz-a9-jPM"/>
+                        <outlet property="txtComment" destination="DaM-FJ-b3U" id="DJg-2o-gqy"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o8u-jb-e27" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="emE-fm-p5o">
+                    <connections>
+                        <action selector="imgAttachmentClick:" destination="Xjr-L0-nWt" id="jvL-k9-cGK"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="3319" y="772"/>
+        </scene>
+        <!--联系人-->
+        <scene sceneID="qvF-zd-gHb">
+            <objects>
+                <viewController id="g4s-8G-Fwq" customClass="CRMCustomerContractEditViewController" customModule="ErpiOSApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ErY-Iy-pGl"/>
+                        <viewControllerLayoutGuide type="bottom" id="3Yh-ei-i2w"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="SI5-dO-oKC">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="联系人" id="9hj-dQ-DbZ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Gi-is-nbv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3319" y="1449"/>
         </scene>
         <!--客户列表-->
         <scene sceneID="Bt0-1E-geR">
@@ -728,7 +868,7 @@
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="客户名称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="451" translatesAutoresizingMaskIntoConstraints="NO" id="HAw-y1-0bk">
                                                             <rect key="frame" x="16" y="6" width="386" height="18"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="15"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="品牌名称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J2y-i3-JM1">
@@ -803,7 +943,7 @@
                                                                 <constraint firstAttribute="height" constant="15" id="cUl-65-Cey"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
-                                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                     </subviews>
@@ -860,6 +1000,8 @@
                     <connections>
                         <outlet property="searchDisplayController" destination="Ywz-LQ-7dA" id="GV3-KO-327"/>
                         <segue destination="KZV-o7-TEF" kind="showDetail" identifier="segueCustomerDetail" id="UPD-hH-vZJ"/>
+                        <segue destination="g4s-8G-Fwq" kind="show" identifier="segueCRMContractEdit" id="Dgi-ee-DKQ"/>
+                        <segue destination="Xjr-L0-nWt" kind="show" identifier="segueCRMAttUpload" id="ZfV-iV-mWf"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vMM-WJ-Si2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -894,4 +1036,8 @@
             <point key="canvasLocation" x="1383" y="1312"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="addAttechment" width="200" height="200"/>
+        <image name="gift" width="30" height="30"/>
+    </resources>
 </document>

@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		73EF62145072FAE31BE09368 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81A150C0B05BD2FAD22D4DAA /* Pods.framework */; };
+		9A372A951C2BD312003475B0 /* CRMCustomerAttachmentUploadController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A372A941C2BD312003475B0 /* CRMCustomerAttachmentUploadController.swift */; };
+		9A372A971C2BD344003475B0 /* CRMCustomerContractEditViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A372A961C2BD344003475B0 /* CRMCustomerContractEditViewController.swift */; };
 		9A5598CE1C28F85A0040919A /* UserDefaultsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5598CD1C28F8590040919A /* UserDefaultsData.swift */; };
 		9A5598D01C2901360040919A /* WebUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A5598CF1C2901360040919A /* WebUser.swift */; };
 		9A7A849B1C191B0C0024A310 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A7A849A1C191B0C0024A310 /* AppDelegate.swift */; };
@@ -60,6 +62,8 @@
 /* Begin PBXFileReference section */
 		7C905B7D984955C1491D1B8B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		81A150C0B05BD2FAD22D4DAA /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9A372A941C2BD312003475B0 /* CRMCustomerAttachmentUploadController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRMCustomerAttachmentUploadController.swift; sourceTree = "<group>"; };
+		9A372A961C2BD344003475B0 /* CRMCustomerContractEditViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRMCustomerContractEditViewController.swift; sourceTree = "<group>"; };
 		9A5598CD1C28F8590040919A /* UserDefaultsData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsData.swift; sourceTree = "<group>"; };
 		9A5598CF1C2901360040919A /* WebUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebUser.swift; sourceTree = "<group>"; };
 		9A7A84971C191B0C0024A310 /* ErpiOSApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ErpiOSApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -194,6 +198,8 @@
 				9A7A84B61C191F210024A310 /* CRMCustomerSignViewController.swift */,
 				9A7A84B71C191F210024A310 /* CRMCustomerSignFormController.swift */,
 				9A7A850A1C1A6C640024A310 /* CRMCustomerListController.swift */,
+				9A372A941C2BD312003475B0 /* CRMCustomerAttachmentUploadController.swift */,
+				9A372A961C2BD344003475B0 /* CRMCustomerContractEditViewController.swift */,
 			);
 			name = CRM;
 			sourceTree = "<group>";
@@ -436,6 +442,7 @@
 			files = (
 				9A7A84C21C191F320024A310 /* EntryUserViewController.swift in Sources */,
 				9A7A84D31C191F7F0024A310 /* Brand.swift in Sources */,
+				9A372A951C2BD312003475B0 /* CRMCustomerAttachmentUploadController.swift in Sources */,
 				9A5598CE1C28F85A0040919A /* UserDefaultsData.swift in Sources */,
 				9A7A850B1C1A6C640024A310 /* CRMCustomerListController.swift in Sources */,
 				9A7A84A31C191B0C0024A310 /* ErpiOSApp.xcdatamodeld in Sources */,
@@ -444,6 +451,7 @@
 				9A7A85071C192D880024A310 /* BlockMsg.swift in Sources */,
 				9A7A84DE1C191FCC0024A310 /* DlgMsg.swift in Sources */,
 				9A7A84C11C191F320024A310 /* EntryCommonViewController.swift in Sources */,
+				9A372A971C2BD344003475B0 /* CRMCustomerContractEditViewController.swift in Sources */,
 				9A7A84D01C191F7F0024A310 /* UserModelGroup.swift in Sources */,
 				9A7A850D1C1A6D550024A310 /* CustomerCell.swift in Sources */,
 				9A7A84FB1C191FED0024A310 /* ErpListViewCell.swift in Sources */,

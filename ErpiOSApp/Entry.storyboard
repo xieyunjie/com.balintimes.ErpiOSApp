@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -374,17 +375,28 @@
                                     <action selector="btnExitClick:" destination="Eff-e4-ous" eventType="touchUpInside" id="0XD-KW-bLG"/>
                                 </connections>
                             </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="line" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VuB-SD-7VW">
+                                <rect key="frame" x="20" y="153" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="GOd-U9-wSJ" secondAttribute="trailing" id="09L-z4-fYc"/>
                             <constraint firstItem="GOd-U9-wSJ" firstAttribute="top" secondItem="hY9-of-2Ai" secondAttribute="top" id="9c3-YQ-xsR"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="VuB-SD-7VW" secondAttribute="trailing" id="ARU-4D-LYo"/>
                             <constraint firstItem="16v-Q1-ub2" firstAttribute="centerX" secondItem="hY9-of-2Ai" secondAttribute="centerX" id="FII-F7-Flb"/>
                             <constraint firstItem="GOd-U9-wSJ" firstAttribute="leading" secondItem="hY9-of-2Ai" secondAttribute="leading" id="W6W-zZ-xc7"/>
                             <constraint firstItem="16v-Q1-ub2" firstAttribute="top" secondItem="GOd-U9-wSJ" secondAttribute="bottom" constant="20" id="fyD-o6-9qj"/>
+                            <constraint firstItem="VuB-SD-7VW" firstAttribute="top" secondItem="16v-Q1-ub2" secondAttribute="bottom" constant="50" id="pgO-my-hyi"/>
+                            <constraint firstItem="VuB-SD-7VW" firstAttribute="leading" secondItem="hY9-of-2Ai" secondAttribute="leadingMargin" id="vt9-v1-mAv"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="个人设置" id="Kse-qt-N5w"/>
+                    <connections>
+                        <outlet property="txtJwt" destination="VuB-SD-7VW" id="fDV-6s-YtJ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="omu-zx-trP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

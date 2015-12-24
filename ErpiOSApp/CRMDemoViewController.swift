@@ -25,6 +25,9 @@ class CRMDemoViewController: UIViewController,UINavigationControllerDelegate,UII
 
         // Do any additional setup after loading the view.
     }
+    @IBAction func imgClick(sender: AnyObject) {
+        print("imgclick");
+    }
     
     deinit{
         NSNotificationCenter.defaultCenter().removeObserver(self);

@@ -46,7 +46,6 @@ class CRMCustomerListController: UITableViewController,CRMCustomerSignViewContro
         return cell
     }
     
-    
     private var didSelectCustomer:Customer?
     private var didSelectBrand:Brand?;
     
@@ -55,6 +54,70 @@ class CRMCustomerListController: UITableViewController,CRMCustomerSignViewContro
         self.didSelectBrand = Brand();
         self.didSelectCustomer = Customer();
         self.performSegueWithIdentifier("segueCustomerDetail", sender: tableView);
+    }
+    
+    override func tableView(tableView: UITableView, editActionsForRowAtIndexPath indexPath: NSIndexPath) -> [UITableViewRowAction]? {
+        
+        let registerAction = UITableViewRowAction(style: .Default, title: "注册申请") { (action: UITableViewRowAction, indexPath:NSIndexPath) -> Void in
+            
+        }
+        registerAction.backgroundColor = UIColor.grayColor();
+        
+        let saleLogAtion = UITableViewRowAction(style: .Normal, title: "日志") { (action: UITableViewRowAction, indexPath:NSIndexPath) -> Void in
+            
+        }
+        saleLogAtion.backgroundColor = UIColor(red: 0.7, green: 0.35, blue: 0.68, alpha: 1);
+        
+        let moreAtion = UITableViewRowAction(style: .Normal, title: "更多",handler:self.moreActionClick);
+        moreAtion.backgroundColor = UIColor.orangeColor();
+        
+        return [moreAtion,registerAction,saleLogAtion];
+        
+    }
+    
+    private func moreActionClick(action:UITableViewRowAction, indexPath:NSIndexPath){
+        
+        let actionSheet = UIAlertController(title: "", message: "更多操作", preferredStyle: UIAlertControllerStyle.ActionSheet);
+        
+        let uploadAttAction = UIAlertAction(title: "附件上传", style: UIAlertActionStyle.Default) { (action) -> Void in
+            self.performSegueWithIdentifier("segueCRMAttUpload", sender: self);
+        }
+        let contractEditAction = UIAlertAction(title: "联系人编辑", style: UIAlertActionStyle.Default) { (action) -> Void in
+           self.performSegueWithIdentifier("segueCRMContractEdit", sender: self);
+        }
+        let deleteAction = UIAlertAction(title: "删除客户", style: UIAlertActionStyle.Destructive) { (action) -> Void in
+            print("delete Customer");
+        }
+        
+        let cancelAction = UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel) { (action) -> Void in
+            print("cancel");
+        } 
+        
+        
+        actionSheet.addAction(uploadAttAction);
+        actionSheet.addAction(contractEditAction);
+        actionSheet.addAction(deleteAction);
+        actionSheet.addAction(cancelAction);
+//        actionSheet.addTextFieldWithConfigurationHandler { (txt:UITextField) -> Void in
+//            
+//        }
+        
+        let mainView = actionSheet.view.subviews[0].subviews[0].subviews[0].subviews[0].subviews[0].subviews[2];
+        print(mainView);
+//        for v in mainView.subviews{
+//            print(v);
+//        }
+        
+//        for v in actionSheet.view.subviews{
+//            if v.isKindOfClass(UIButton){
+//                let b = v as! UIButton;
+//                
+//                print(b);
+//            }
+//        }
+        
+        self.presentViewController(actionSheet, animated: true, completion: nil);
+ 
     }
 
     @IBAction func btnBackClick(sender: AnyObject) {
