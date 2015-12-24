@@ -8,13 +8,35 @@
 
 import UIKit
 
-class EntryLoginViewController: UIViewController {
+class EntryLoginViewController: UIViewController,UITextFieldDelegate {
     
     @IBOutlet weak var txtUserName: UITextField!
     @IBOutlet weak var txtPassword: UITextField!
 
     @IBAction func btnLoginClick(sender: AnyObject) {
         
+        self.login();
+        
+    }
+    @IBAction func btnResetClick(sender: AnyObject) {
+        
+        self.txtPassword.text = "";
+        self.txtUserName.text = "";
+        
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if textField == self.txtUserName{
+            self.txtPassword.becomeFirstResponder();
+        }
+        else if textField == self.txtPassword{
+            self.login();
+        }
+        
+        return true;
+    }
+    
+    private func login(){
         self.resignFirstResponder();
         
         if txtUserName.text != nil && self.txtPassword.text != nil{
@@ -29,7 +51,7 @@ class EntryLoginViewController: UIViewController {
                 BlockMsg.hideLoading(block);
                 
                 if res.success == true{
-                      UserDefaultsData.userToken(res.model?.token);
+                    UserDefaultsData.userToken(res.model?.token);
                     self.performSegueWithIdentifier("entryErpList", sender: self);
                 }
                 else{
@@ -38,41 +60,13 @@ class EntryLoginViewController: UIViewController {
                 }
                 
             })
-            
-            
-//            if username == password{
-//                
-//                self.performSegueWithIdentifier("entryErpList", sender: self);
-//            }
-//            else{
-//                let alertV = DlgMsg.alert("提示", "登录失败 用户名或密码录入有误", handler: { (action) -> Void in
-//                    self.txtUserName.becomeFirstResponder();
-//                })
-//                
-//                self .presentViewController(alertV, animated: true, completion: { () -> Void in
-////                    self.txtUserName.becomeFirstResponder();
-//                    print("completion");
-//                })
-//            }
-//            
-//        }else{
-//            let alertV = DlgMsg.alert("提示", "用户名或密码录入有误",handler:nil);
-//            self .presentViewController(alertV, animated: true, completion: { () -> Void in
-////                self.txtUserName.becomeFirstResponder();
-//                
-//            })
         }
-        
-    }
-    @IBAction func btnResetClick(sender: AnyObject) {
-        
-        self.txtPassword.text = "";
-        self.txtUserName.text = "";
-        
     }
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.txtUserName.delegate = self;
+        self.txtPassword.delegate = self;
         // Do any additional setup after loading the view.
     }
 

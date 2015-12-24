@@ -70,7 +70,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="密码" textAlignment="natural" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="XYh-Za-4Ff">
                                 <rect key="frame" x="175" y="195" width="250" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xBa-t8-gpg">
                                 <rect key="frame" x="205" y="275" width="46" height="30"/>
@@ -452,6 +452,6 @@
         <image name="buddy_header_bg_highlighted" width="2" height="89"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="gXO-sa-qvr"/>
+        <segue reference="chA-ia-SoM"/>
     </inferredMetricsTieBreakers>
 </document>

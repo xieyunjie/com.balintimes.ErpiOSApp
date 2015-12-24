@@ -186,8 +186,8 @@ struct RequestApi{
             completion(retData);
             
             }) { (err) -> Void in
-                let failure = ResponseData<T>(err: err!, errCode: err!.code);
                 
+                let failure = ResponseData<T>(err: err!, errCode: err!.code);
                 completion(failure);
         }
     }
@@ -241,10 +241,7 @@ struct RequestApi{
         Alamofire.request(method,  AppSetting.BaseUrl + UrlString.URLString, parameters: parameters, encoding: ParameterEncoding.JSON, headers: headers).responseJSON { ( res:Response<AnyObject, NSError>) -> Void in
             
             if res.result.isFailure == true{
-                
-                print(res.result.value);
                 failure(res.result.error);
-                
                 return;
             }
             
