@@ -102,7 +102,7 @@ class CRMCustomerListController: UITableViewController,CRMCustomerSignViewContro
            self.performSegueWithIdentifier("segueCRMContractEdit", sender: self);
         }
         let saleLogAtion = UIAlertAction(title: "日志", style: UIAlertActionStyle.Default) { (action) -> Void in
-            print("sale log");
+            self.performSegueWithIdentifier("segueCRMRegister", sender: self);
         }
         let deleteAction = UIAlertAction(title: "删除客户", style: UIAlertActionStyle.Destructive) { (action) -> Void in
             print("delete Customer");
