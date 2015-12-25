@@ -8,18 +8,39 @@
 
 import UIKit
 
-class CRMCustomerListController: UITableViewController,CRMCustomerSignViewControllerDelegate {
-
+class CRMCustomerListController: UITableViewController,CRMCustomerSignViewControllerDelegate,TableViewFooterLoadMoreViewDelegate {
+ 
+    var tableViewFooter:TableViewFooterLoadMoreView?;
+    
     override func viewDidLoad() {
-        super.viewDidLoad()
-
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        super.viewDidLoad();
+        
+        let refreshControl = UIRefreshControl();
+        refreshControl.addTarget(self, action: Selector("refresh"), forControlEvents: UIControlEvents.ValueChanged);
+        refreshControl.attributedTitle = NSAttributedString(string: "刷新数据 ....");
+        self.refreshControl = refreshControl;
+        
+        self.tableViewFooter = TableViewFooterLoadMoreView.createFooter(CGRectMake(0, 0, self.view.bounds.width, 44), delegate: self);
+        tableView.tableFooterView = self.tableViewFooter
+        
+     }
+    
+    func refresh(){
+        self.refreshControl?.endRefreshing();
     }
+    
+    func loadMoreBegin(){
+        print("begin load");
+        let time = dispatch_time(DISPATCH_TIME_NOW, Int64(2.0 * Double(NSEC_PER_SEC)));
 
+        
+        dispatch_after(time,dispatch_get_main_queue() , { () -> Void in
+            self.tableViewFooter?.stopLoading();
+            print("end load");
+        })
+        
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -63,27 +84,25 @@ class CRMCustomerListController: UITableViewController,CRMCustomerSignViewContro
         }
         registerAction.backgroundColor = UIColor.grayColor();
         
-        let saleLogAtion = UITableViewRowAction(style: .Normal, title: "日志") { (action: UITableViewRowAction, indexPath:NSIndexPath) -> Void in
-            
-        }
-        saleLogAtion.backgroundColor = UIColor(red: 0.7, green: 0.35, blue: 0.68, alpha: 1);
-        
         let moreAtion = UITableViewRowAction(style: .Normal, title: "更多",handler:self.moreActionClick);
         moreAtion.backgroundColor = UIColor.orangeColor();
         
-        return [moreAtion,registerAction,saleLogAtion];
+        return [moreAtion,registerAction];
         
     }
     
     private func moreActionClick(action:UITableViewRowAction, indexPath:NSIndexPath){
         
-        let actionSheet = UIAlertController(title: "", message: "更多操作", preferredStyle: UIAlertControllerStyle.ActionSheet);
+        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet);
         
         let uploadAttAction = UIAlertAction(title: "附件上传", style: UIAlertActionStyle.Default) { (action) -> Void in
             self.performSegueWithIdentifier("segueCRMAttUpload", sender: self);
         }
         let contractEditAction = UIAlertAction(title: "联系人编辑", style: UIAlertActionStyle.Default) { (action) -> Void in
            self.performSegueWithIdentifier("segueCRMContractEdit", sender: self);
+        }
+        let saleLogAtion = UIAlertAction(title: "日志", style: UIAlertActionStyle.Default) { (action) -> Void in
+            print("sale log");
         }
         let deleteAction = UIAlertAction(title: "删除客户", style: UIAlertActionStyle.Destructive) { (action) -> Void in
             print("delete Customer");
@@ -92,29 +111,13 @@ class CRMCustomerListController: UITableViewController,CRMCustomerSignViewContro
         let cancelAction = UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel) { (action) -> Void in
             print("cancel");
         } 
-        
+
         
         actionSheet.addAction(uploadAttAction);
         actionSheet.addAction(contractEditAction);
+        actionSheet.addAction(saleLogAtion);
         actionSheet.addAction(deleteAction);
         actionSheet.addAction(cancelAction);
-//        actionSheet.addTextFieldWithConfigurationHandler { (txt:UITextField) -> Void in
-//            
-//        }
-//        
-//        let mainView = actionSheet.view.subviews[0].subviews[0].subviews[0].subviews[0].subviews[0].subviews[2];
-//        print(mainView);
-//        for v in mainView.subviews{
-//            print(v);
-//        }
-        
-//        for v in actionSheet.view.subviews{
-//            if v.isKindOfClass(UIButton){
-//                let b = v as! UIButton;
-//                
-//                print(b);
-//            }
-//        }
         
         self.presentViewController(actionSheet, animated: true, completion: nil);
  
@@ -161,7 +164,8 @@ class CRMCustomerListController: UITableViewController,CRMCustomerSignViewContro
   
     /*
     // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    over
+    ride func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }

@@ -9,4 +9,5 @@ pod 'SwiftForms'
 pod 'MBProgressHUD', '~> 0.9.1'
 pod 'ActionSheetPicker-3.0'
 pod 'JSONWebToken'
+pod 'GearRefreshControl'
 

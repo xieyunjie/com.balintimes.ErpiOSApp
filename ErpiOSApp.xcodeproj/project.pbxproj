@@ -57,6 +57,8 @@
 		9A9FDB6D1C2A8DE4005C05C0 /* LoginReq.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9FDB6C1C2A8DE4005C05C0 /* LoginReq.swift */; };
 		9A9FDB6F1C2A8E1A005C05C0 /* CrmReq.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9FDB6E1C2A8E1A005C05C0 /* CrmReq.swift */; };
 		9A9FDB711C2AA59B005C05C0 /* EntryBlankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A9FDB701C2AA59B005C05C0 /* EntryBlankViewController.swift */; };
+		9ABC37D51C2D16E80042F419 /* TableViewFooterLoadMoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABC37D41C2D16E80042F419 /* TableViewFooterLoadMoreView.swift */; };
+		9ABC37D71C2D170F0042F419 /* TableViewFooterLoadMoreView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9ABC37D61C2D170F0042F419 /* TableViewFooterLoadMoreView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -114,6 +116,8 @@
 		9A9FDB6C1C2A8DE4005C05C0 /* LoginReq.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginReq.swift; sourceTree = "<group>"; };
 		9A9FDB6E1C2A8E1A005C05C0 /* CrmReq.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CrmReq.swift; sourceTree = "<group>"; };
 		9A9FDB701C2AA59B005C05C0 /* EntryBlankViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EntryBlankViewController.swift; sourceTree = "<group>"; };
+		9ABC37D41C2D16E80042F419 /* TableViewFooterLoadMoreView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewFooterLoadMoreView.swift; sourceTree = "<group>"; };
+		9ABC37D61C2D170F0042F419 /* TableViewFooterLoadMoreView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewFooterLoadMoreView.xib; sourceTree = "<group>"; };
 		C995F20DCCE76B420B764054 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -297,6 +301,8 @@
 				9A7A84F41C191FED0024A310 /* DataPickerViewController.swift */,
 				9A7A84F51C191FED0024A310 /* DataPickerViewController.xib */,
 				9A7A850C1C1A6D550024A310 /* CustomerCell.swift */,
+				9ABC37D41C2D16E80042F419 /* TableViewFooterLoadMoreView.swift */,
+				9ABC37D61C2D170F0042F419 /* TableViewFooterLoadMoreView.xib */,
 			);
 			name = xib;
 			sourceTree = "<group>";
@@ -375,6 +381,7 @@
 				9A7A84EB1C191FDF0024A310 /* Quote.storyboard in Resources */,
 				9A7A84E81C191FDF0024A310 /* Entry.storyboard in Resources */,
 				9A7A84E91C191FDF0024A310 /* CRM.storyboard in Resources */,
+				9ABC37D71C2D170F0042F419 /* TableViewFooterLoadMoreView.xib in Resources */,
 				9A7A84A51C191B0C0024A310 /* Assets.xcassets in Resources */,
 				9A7A84DA1C191FAD0024A310 /* commoncells.plist in Resources */,
 				9A7A84FD1C191FED0024A310 /* DatePickerViewController.xib in Resources */,
@@ -470,6 +477,7 @@
 				9A7A84CF1C191F7F0024A310 /* UserModel.swift in Sources */,
 				9A7A85051C19269C0024A310 /* CityPickerViewController.swift in Sources */,
 				9A7A84D21C191F7F0024A310 /* Customer.swift in Sources */,
+				9ABC37D51C2D16E80042F419 /* TableViewFooterLoadMoreView.swift in Sources */,
 				9A7A84FA1C191FED0024A310 /* ErpListViewHeader.swift in Sources */,
 				9A7A84B31C191F0D0024A310 /* ViewController.swift in Sources */,
 				9A7A84BA1C191F210024A310 /* CRMCustomerSignFormController.swift in Sources */,

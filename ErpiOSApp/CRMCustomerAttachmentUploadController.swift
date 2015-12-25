@@ -39,7 +39,6 @@ class CRMCustomerAttachmentUploadController: UIViewController,UIImagePickerContr
             return;
         }
         
-        
         let block = BlockMsg.showLoading(self.view);
         
         var fields = Dictionary<String,String>();
@@ -68,10 +67,7 @@ class CRMCustomerAttachmentUploadController: UIViewController,UIImagePickerContr
                 
                 BlockMsg.hideLoading(block);
                 BlockMsg.showText(self.view, msg: "上传失败 -- \(err?.code)", afterDelay: 2.0);
-                
         }
-        
-        
     }
     
     @IBAction func btnCancelClick(sender: AnyObject) {
@@ -83,7 +79,7 @@ class CRMCustomerAttachmentUploadController: UIViewController,UIImagePickerContr
         let imgPicker = UIImagePickerController();
         imgPicker.delegate = self;
         
-        let actionSheet = UIAlertController(title: "", message: "", preferredStyle: .ActionSheet);
+        let actionSheet = UIAlertController(title: nil, message: nil, preferredStyle: .ActionSheet);
         let cameraAction = UIAlertAction(title: "拍照", style: .Default) { (action) -> Void in
             imgPicker.sourceType = .Camera
             self.presentViewController(imgPicker, animated: true, completion: nil);
