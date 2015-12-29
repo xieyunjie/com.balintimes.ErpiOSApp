@@ -18,7 +18,7 @@ class CustomerCell: UITableViewCell {
     @IBOutlet weak var lblRegion: UILabel!
     @IBOutlet weak var lblStatus: UILabel!
     
-    
+    var customer:Customer!;
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -31,11 +31,24 @@ class CustomerCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setCellValue(value:String){
-        self.lblCustomerName.text = "百事可乐百事可乐百事可乐";
-        self.lblBrandName.text = "乐事薯片乐事薯片乐事薯片"
+//    func setCellValue(value:String){
+//        self.lblCustomerName.text = "百事可乐百事可乐百事可乐";
+//        self.lblBrandName.text = "乐事薯片乐事薯片乐事薯片"
+//        
+//        self.lblSignDate.text = "2015-09-09";
+//        
+//    }
+    func setCellValue(cus:Customer){
         
-        self.lblSignDate.text = "2015-09-09";
+        self.customer = cus;
+        
+        self.lblCustomerName.text = self.customer.name;
+        self.lblBrandName.text = self.customer.brandname;
+        self.lblSignDate.text = self.customer.signDate;
+        self.lblIndustry.text = self.customer.industry;
+        self.lblCustomerCategory.text = self.customer.status;
+        self.lblRegion.text = "\(self.customer.province)->\(self.customer.city)";
+        self.lblStatus.text = self.customer.status;
         
     }
 

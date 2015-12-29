@@ -12,6 +12,10 @@ import ObjectMapper
 
 class BaseModel: NSObject, Mappable{
     
+    
+    override init(){
+        
+    }
     required init?(_ map: Map) {
     }
     

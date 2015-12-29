@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="cjJ-7H-f1H">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -85,8 +85,8 @@
                                     <action selector="signClick:" destination="cjJ-7H-f1H" eventType="touchUpInside" id="x1Q-CF-S8e"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wbz-9w-3Mg">
-                                <rect key="frame" x="169" y="58" width="117" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wbz-9w-3Mg">
+                                <rect key="frame" x="169" y="58" width="46" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="46" id="aV5-Wx-wsi"/>
                                 </constraints>
@@ -832,7 +832,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Gi-is-nbv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3629" y="1447"/>
+            <point key="canvasLocation" x="3319" y="1481"/>
         </scene>
         <!--注册申请-->
         <scene sceneID="ifZ-xi-RTt">
@@ -907,12 +907,43 @@
                     </view>
                     <navigationItem key="navigationItem" title="注册申请" id="4fS-Tj-5Fa"/>
                     <connections>
-                        <segue destination="h5Q-1V-xbw" kind="showDetail" id="3cc-VK-6FP"/>
+                        <segue destination="WHS-mv-M4e" kind="show" identifier="segueCRMMediaType" id="O8f-du-kuW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gR2-Sx-4hD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2283" y="2420"/>
+        </scene>
+        <!--申请媒体类型-->
+        <scene sceneID="9Ag-vo-d4y">
+            <objects>
+                <tableViewController id="WHS-mv-M4e" customClass="CRMRegisterMediaTypeController" customModule="ErpiOSApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="K9x-0F-CEy">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="LQE-Xe-6nR">
+                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LQE-Xe-6nR" id="1ir-PB-HuW">
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="WHS-mv-M4e" id="EYA-2M-qlX"/>
+                            <outlet property="delegate" destination="WHS-mv-M4e" id="WsO-af-Ug4"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="申请媒体类型" id="JzS-hh-QHh">
+                        <barButtonItem key="rightBarButtonItem" title="完成" id="SKm-3L-Uaw"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Jo5-MM-PR3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2283" y="3308"/>
         </scene>
         <!--申请表单-->
         <scene sceneID="Xrd-1u-ya4">
@@ -1012,24 +1043,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ed4-GY-zia" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3083" y="2420"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="s4R-gr-Q6F">
-            <objects>
-                <viewController id="h5Q-1V-xbw" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="O79-4o-QVx"/>
-                        <viewControllerLayoutGuide type="bottom" id="K4P-4X-zE0"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="u5R-GR-DkU">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KLO-zB-6jR" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2283" y="3303"/>
         </scene>
         <!--客户列表-->
         <scene sceneID="Bt0-1E-geR">

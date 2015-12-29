@@ -159,12 +159,29 @@ class CRMDemoViewController: UIViewController,UINavigationControllerDelegate,UII
         }
     }
     @IBAction func signClick(sender: AnyObject) {
-        RequestApi.post(LoginReq.signinUrl.rawValue, nil) { (res:ResponseData<WebUser>) -> Void in
+//        RequestApi.post(LoginReq.signinUrl.rawValue, nil) { (res:ResponseData<WebUser>) -> Void in
+//            
+//            
+//            UserDefaultsData.userToken(res.model?.token);
+//            
+//            print(UserDefaultsData.userToken()!);
+//            
+//        }
+        
+        let block = BlockMsg.showLoading(self.view, msg: "正在加载数据...");
+        let params:[String:AnyObject] = ["page":1,"pagesize":25];
+         
+        
+        RequestApi.post(CrmReq.listUrl.rawValue, params) { (res:ResponseData<Customer>) -> Void in
+            BlockMsg.hideLoading(block);
             
-            
-            UserDefaultsData.userToken(res.model?.token);
-            
-            print(UserDefaultsData.userToken()!);
+            if res.success == true{
+                print(res.list);
+                
+            }
+            else{
+                BlockMsg.showText(self.view, msg: "加载数据失败-\(res.errCode!)", afterDelay: 1.5);
+            }
             
         }
     }

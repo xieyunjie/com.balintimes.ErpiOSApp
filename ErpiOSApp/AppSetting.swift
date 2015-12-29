@@ -11,7 +11,7 @@ import Foundation
 
 
 struct AppSetting {
-    static let BaseUrl = "http://172.16.2.26:3322/";
+    static let BaseUrl = "http://172.16.2.27:3322/";
     
     enum JWT:String{
         case issuer = "balintimes-issuer";
