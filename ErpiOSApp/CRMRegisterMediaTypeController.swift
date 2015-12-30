@@ -26,7 +26,6 @@ class CRMRegisterMediaTypeController: UITableViewController {
             
             if res.success == true{
                 self.cityMediaType = res.list!;
-                print(self.cityMediaType[0].mediatypelist);
                 self.tableView.reloadData() ;
             }
         }

@@ -45,7 +45,15 @@ class CRMCustomerListController: UITableViewController,CRMCustomerSignViewContro
             if res.success == true{
                 
                 if res.list?.count > 0{
-                    self.customerList += res.list!;
+                    
+                    if loadPage == 1 {
+                        self.customerList = res.list!;
+                    }
+                    else{
+                        self.customerList += res.list!;
+                    }
+                    
+                    
                     self.total = res.total;
                     self.currentPage = loadPage;
                     
@@ -77,16 +85,6 @@ class CRMCustomerListController: UITableViewController,CRMCustomerSignViewContro
         }
         
         self.loadCustomerList(self.currentPage + 1 , afterLoad: self.tableViewFooter?.stopLoading);
-        
-        
-        //        print("begin load");
-        //        let time = dispatch_time(DISPATCH_TIME_NOW, Int64(2.0 * Double(NSEC_PER_SEC)));
-        //
-        //
-        //        dispatch_after(time,dispatch_get_main_queue() , { () -> Void in
-        //            self.tableViewFooter?.stopLoading();
-        //            print("end load");
-        //        })
         
     }
     
@@ -193,7 +191,7 @@ class CRMCustomerListController: UITableViewController,CRMCustomerSignViewContro
             signCtrl.delegate = self;
         }
         else if segue.identifier == "segueCRMAttUpload"{
-            let uploadCtrl = segue.destinationViewController as! CRMCustomerAttachmentUploadController;
+//            let uploadCtrl = segue.destinationViewController as! CRMCustomerAttachmentUploadController;
         }
         
         
