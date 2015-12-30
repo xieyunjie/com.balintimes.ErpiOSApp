@@ -13,6 +13,7 @@ enum CrmReq:String {
     case signCustomerUrl = "crm/sign";
     case attUrl = "crm/att";
     case listUrl = "crm/list";
+    case mediaTypeUrl = "crm/mediatype";
     
     case cityUrl = "crm/cities",provinceUrl = "crm/province";
 }

@@ -62,6 +62,7 @@
 		9ABC37D91C2D29EC0042F419 /* CRMCustomerRegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABC37D81C2D29EC0042F419 /* CRMCustomerRegisterViewController.swift */; };
 		9ABC37DD1C2D2A470042F419 /* CRMCustomerRegisterFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABC37DC1C2D2A470042F419 /* CRMCustomerRegisterFormController.swift */; };
 		9ABC37DF1C2D2A850042F419 /* CRMRegisterMediaTypeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABC37DE1C2D2A850042F419 /* CRMRegisterMediaTypeController.swift */; };
+		9AC6DCB21C327C380029D963 /* CityMediaType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC6DCB11C327C380029D963 /* CityMediaType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -124,6 +125,7 @@
 		9ABC37D81C2D29EC0042F419 /* CRMCustomerRegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRMCustomerRegisterViewController.swift; sourceTree = "<group>"; };
 		9ABC37DC1C2D2A470042F419 /* CRMCustomerRegisterFormController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRMCustomerRegisterFormController.swift; sourceTree = "<group>"; };
 		9ABC37DE1C2D2A850042F419 /* CRMRegisterMediaTypeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRMRegisterMediaTypeController.swift; sourceTree = "<group>"; };
+		9AC6DCB11C327C380029D963 /* CityMediaType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityMediaType.swift; sourceTree = "<group>"; };
 		C995F20DCCE76B420B764054 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -248,6 +250,7 @@
 				9A7A84CB1C191F7F0024A310 /* Customer.swift */,
 				9A7A84CC1C191F7F0024A310 /* Brand.swift */,
 				9A5598CF1C2901360040919A /* WebUser.swift */,
+				9AC6DCB11C327C380029D963 /* CityMediaType.swift */,
 			);
 			name = model;
 			sourceTree = "<group>";
@@ -469,6 +472,7 @@
 				9A7A84DE1C191FCC0024A310 /* DlgMsg.swift in Sources */,
 				9A7A84C11C191F320024A310 /* EntryCommonViewController.swift in Sources */,
 				9A372A971C2BD344003475B0 /* CRMCustomerContractEditViewController.swift in Sources */,
+				9AC6DCB21C327C380029D963 /* CityMediaType.swift in Sources */,
 				9ABC37DD1C2D2A470042F419 /* CRMCustomerRegisterFormController.swift in Sources */,
 				9A7A84D01C191F7F0024A310 /* UserModelGroup.swift in Sources */,
 				9A7A850D1C1A6D550024A310 /* CustomerCell.swift in Sources */,

@@ -16,7 +16,28 @@ protocol CRMCustomerRegisterFormControllerDelegate{
 
 class CRMCustomerRegisterFormController: UITableViewController {
     
+    @IBOutlet weak var lblCityMediaType: UILabel!
+    
+    @IBOutlet weak var mediaTypeCell: UITableViewCell!
+    
     var delegate:CRMCustomerRegisterFormControllerDelegate?;
+    
+    func setCityMediaType(cityMediaType: [CityMediaType]){
+        print(cityMediaType);
+        var cellHeight = 40;
+        var info = "";
+        
+        for city in cityMediaType {
+            for media in city.mediatypelist{
+                
+                info += "\(city.cityname) -> \(media.medianame);\n";
+                cellHeight += 40;
+            }
+        }
+        self.lblCityMediaType.text = info;
+        self.lblCityMediaType.numberOfLines = 0;
+        self.mediaTypeCell.frame.size.height = CGFloat( cellHeight);
+    }
 
     @IBAction func btnMediaTypeClick(sender: AnyObject) {
         if let d = self.delegate{

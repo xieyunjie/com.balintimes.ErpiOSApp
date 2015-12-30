@@ -918,17 +918,26 @@
         <scene sceneID="9Ag-vo-d4y">
             <objects>
                 <tableViewController id="WHS-mv-M4e" customClass="CRMRegisterMediaTypeController" customModule="ErpiOSApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="K9x-0F-CEy">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="40" sectionHeaderHeight="28" sectionFooterHeight="28" id="K9x-0F-CEy">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="LQE-Xe-6nR">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cityMediaTypeCell" textLabel="gfh-uH-yaH" style="IBUITableViewCellStyleDefault" id="LQE-Xe-6nR">
+                                <rect key="frame" x="0.0" y="92" width="600" height="40"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="LQE-Xe-6nR" id="1ir-PB-HuW">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="39"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="gfh-uH-yaH">
+                                            <rect key="frame" x="15" y="0.0" width="570" height="39"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
@@ -938,7 +947,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="申请媒体类型" id="JzS-hh-QHh">
-                        <barButtonItem key="rightBarButtonItem" title="完成" id="SKm-3L-Uaw"/>
+                        <barButtonItem key="rightBarButtonItem" title="完成" id="SKm-3L-Uaw">
+                            <connections>
+                                <action selector="btnDoneClick:" destination="WHS-mv-M4e" id="oMd-XG-xU8"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jo5-MM-PR3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1012,21 +1025,34 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="申请明细" id="Ys7-mM-VHY">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="mediaTypeCell" id="Ws4-qs-m46">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="mediaTypeCell" rowHeight="44" id="Ws4-qs-m46">
                                         <rect key="frame" x="0.0" y="416" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ws4-qs-m46" id="1ha-Ig-BdV">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Zo-e0-GUI">
-                                                    <rect key="frame" x="27" y="7" width="46" height="30"/>
-                                                    <state key="normal" title="Button"/>
+                                                <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Zo-e0-GUI">
+                                                    <rect key="frame" x="15" y="7" width="38" height="30"/>
+                                                    <state key="normal" title="编  辑"/>
                                                     <connections>
                                                         <action selector="btnMediaTypeClick:" destination="I2d-oT-Cg1" eventType="touchUpInside" id="2hK-bo-01m"/>
                                                     </connections>
                                                 </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="natural" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lvf-7N-OuH">
+                                                    <rect key="frame" x="73" y="11" width="504" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="0Zo-e0-GUI" firstAttribute="leading" secondItem="1ha-Ig-BdV" secondAttribute="leading" constant="15" id="Bot-54-qje"/>
+                                                <constraint firstItem="Lvf-7N-OuH" firstAttribute="leading" secondItem="0Zo-e0-GUI" secondAttribute="trailing" constant="20" id="MnH-ga-xwO"/>
+                                                <constraint firstItem="0Zo-e0-GUI" firstAttribute="top" secondItem="1ha-Ig-BdV" secondAttribute="top" constant="7" id="aNP-jd-J98"/>
+                                                <constraint firstItem="Lvf-7N-OuH" firstAttribute="top" secondItem="0Zo-e0-GUI" secondAttribute="top" constant="4" id="bmb-Ol-di2"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="Lvf-7N-OuH" secondAttribute="trailing" constant="15" id="erO-fD-6yA"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </cells>
@@ -1039,6 +1065,10 @@
                     </tableView>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="600" height="500"/>
+                    <connections>
+                        <outlet property="lblCityMediaType" destination="Lvf-7N-OuH" id="5g8-iC-cex"/>
+                        <outlet property="mediaTypeCell" destination="Ws4-qs-m46" id="aUU-sr-ilk"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ed4-GY-zia" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

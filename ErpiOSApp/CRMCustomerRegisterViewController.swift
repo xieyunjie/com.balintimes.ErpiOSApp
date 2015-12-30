@@ -8,7 +8,7 @@
 
 import UIKit
 
-class CRMCustomerRegisterViewController: UIViewController,CRMCustomerRegisterFormControllerDelegate {
+class CRMCustomerRegisterViewController: UIViewController,CRMCustomerRegisterFormControllerDelegate,CRMRegisterMediaTypeControllerDelegate {
 
     var customerRegisterFormCtrl:CRMCustomerRegisterFormController!;
     override func viewDidLoad() {
@@ -29,9 +29,20 @@ class CRMCustomerRegisterViewController: UIViewController,CRMCustomerRegisterFor
            self.customerRegisterFormCtrl = segue.destinationViewController as! CRMCustomerRegisterFormController;
             self.customerRegisterFormCtrl.delegate = self;
         }
+        else if segue.identifier == "segueCRMMediaType" {
+            let mediaTypeCtrl = segue.destinationViewController as! CRMRegisterMediaTypeController;
+            mediaTypeCtrl.delegate = self;
+            
+        }
     }
     func selectMediaType() {
         self.performSegueWithIdentifier("segueCRMMediaType", sender: self);
+    }
+    
+    func CityMediaTypeDone(cityMediaType: [CityMediaType]) {
+        
+        customerRegisterFormCtrl.setCityMediaType(cityMediaType);
+        self.navigationController?.popViewControllerAnimated(true);
     }
     
     /*

@@ -28,17 +28,19 @@ class CRMCustomerListController: UITableViewController,CRMCustomerSignViewContro
         self.tableViewFooter = TableViewFooterLoadMoreView.createFooter(CGRectMake(0, 0, self.view.bounds.width, 44), delegate: self);
         tableView.tableFooterView = self.tableViewFooter;
         
-        self.loadCustomerList(1, afterLoad: nil);
-        
+        let block = BlockMsg.showLoading(self.view, msg: "正在加载数据...");
+        self.loadCustomerList(1) { () -> Void in
+            BlockMsg.hideLoading(block);
+        }
     }
     
     func loadCustomerList(loadPage:Int,afterLoad:(()->Void)?){
         
-        let block = BlockMsg.showLoading(self.view, msg: "正在加载数据...");
+        
         let params:[String:AnyObject] = ["page":loadPage,"pagesize":self.pageSize];
         
         RequestApi.post(CrmReq.listUrl.rawValue, params) { (res:ResponseData<Customer>) -> Void in
-            BlockMsg.hideLoading(block);
+            
             
             if res.success == true{
                 
@@ -49,13 +51,12 @@ class CRMCustomerListController: UITableViewController,CRMCustomerSignViewContro
                     
                     self.tableView.reloadData();
                 }
-                if let al = afterLoad{
-                    al();
-                }
-                
             }
             else{
                 BlockMsg.showText(self.view, msg: "加载数据失败-\(res.errCode)", afterDelay: 1.5);
+            }
+            if let al = afterLoad{
+                al();
             }
             
         }

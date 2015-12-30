@@ -64,6 +64,7 @@ class Customer: BaseModel {
         comment <- map["comment"];
         brandname <- map["brandname"];
         status <- map["status"];
+        signDate <- map["signDate"];
         
     }
 }
