@@ -63,6 +63,9 @@
 		9ABC37DD1C2D2A470042F419 /* CRMCustomerRegisterFormController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABC37DC1C2D2A470042F419 /* CRMCustomerRegisterFormController.swift */; };
 		9ABC37DF1C2D2A850042F419 /* CRMRegisterMediaTypeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9ABC37DE1C2D2A850042F419 /* CRMRegisterMediaTypeController.swift */; };
 		9AC6DCB21C327C380029D963 /* CityMediaType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC6DCB11C327C380029D963 /* CityMediaType.swift */; };
+		9AC6DCB51C338A230029D963 /* BMMSMPMoviePlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9AC6DCB41C338A230029D963 /* BMMSMPMoviePlayerViewController.swift */; };
+		9AC6DCB91C33B2200029D963 /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AC6DCB81C33B2200029D963 /* AVKit.framework */; };
+		9AC6DCBB1C33B2650029D963 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9AC6DCBA1C33B2650029D963 /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -126,6 +129,10 @@
 		9ABC37DC1C2D2A470042F419 /* CRMCustomerRegisterFormController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRMCustomerRegisterFormController.swift; sourceTree = "<group>"; };
 		9ABC37DE1C2D2A850042F419 /* CRMRegisterMediaTypeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CRMRegisterMediaTypeController.swift; sourceTree = "<group>"; };
 		9AC6DCB11C327C380029D963 /* CityMediaType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityMediaType.swift; sourceTree = "<group>"; };
+		9AC6DCB41C338A230029D963 /* BMMSMPMoviePlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BMMSMPMoviePlayerViewController.swift; sourceTree = "<group>"; };
+		9AC6DCB61C338AB50029D963 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+		9AC6DCB81C33B2200029D963 /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
+		9AC6DCBA1C33B2650029D963 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		C995F20DCCE76B420B764054 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,6 +141,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AC6DCBB1C33B2650029D963 /* AVFoundation.framework in Frameworks */,
+				9AC6DCB91C33B2200029D963 /* AVKit.framework in Frameworks */,
 				73EF62145072FAE31BE09368 /* Pods.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -144,6 +153,9 @@
 		1FE4F278CB72F1023FFE5F97 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				9AC6DCBA1C33B2650029D963 /* AVFoundation.framework */,
+				9AC6DCB81C33B2200029D963 /* AVKit.framework */,
+				9AC6DCB61C338AB50029D963 /* MediaPlayer.framework */,
 				81A150C0B05BD2FAD22D4DAA /* Pods.framework */,
 			);
 			name = Frameworks;
@@ -196,6 +208,7 @@
 		9A7A84B11C191EF30024A310 /* controller */ = {
 			isa = PBXGroup;
 			children = (
+				9AC6DCB31C3389900029D963 /* BMMS */,
 				9A7A84C31C191F370024A310 /* Entry */,
 				9A7A84B41C191F160024A310 /* CRM */,
 				9A7A84B21C191F0D0024A310 /* ViewController.swift */,
@@ -326,6 +339,14 @@
 				9A9FDB6E1C2A8E1A005C05C0 /* CrmReq.swift */,
 			);
 			name = url;
+			sourceTree = "<group>";
+		};
+		9AC6DCB31C3389900029D963 /* BMMS */ = {
+			isa = PBXGroup;
+			children = (
+				9AC6DCB41C338A230029D963 /* BMMSMPMoviePlayerViewController.swift */,
+			);
+			name = BMMS;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -459,6 +480,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9AC6DCB51C338A230029D963 /* BMMSMPMoviePlayerViewController.swift in Sources */,
 				9A7A84C21C191F320024A310 /* EntryUserViewController.swift in Sources */,
 				9A7A84D31C191F7F0024A310 /* Brand.swift in Sources */,
 				9ABC37D91C2D29EC0042F419 /* CRMCustomerRegisterViewController.swift in Sources */,
