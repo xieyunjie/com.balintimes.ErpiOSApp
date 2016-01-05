@@ -27,6 +27,7 @@ class EntryBlankViewController: UIViewController {
                 if res.success == false{
                     
                     self.performSegueWithIdentifier("segueToLoginView", sender: self);
+                    UserDefaultsData.resetUserToken();
                     //                    let board =  UIStoryboard.init(name: "Entry", bundle: nil);
                     //                    let rootViewCtrl:UITabBarController  = board.instantiateViewControllerWithIdentifier("entryMainView") as! UITabBarController;
                     //                    self.window?.rootViewController = rootViewCtrl;
@@ -45,6 +46,7 @@ class EntryBlankViewController: UIViewController {
         }
         else{
             self.performSegueWithIdentifier("segueToLoginView", sender: self);
+            UserDefaultsData.resetUserToken();
             //            let board =  UIStoryboard.init(name: "Entry", bundle: nil);
             //            let rootViewCtrl:EntryLoginViewController = board.instantiateViewControllerWithIdentifier("entryLoginView") as! EntryLoginViewController;
             //            self.window?.rootViewController = rootViewCtrl;

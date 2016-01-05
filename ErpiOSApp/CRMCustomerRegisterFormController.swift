@@ -36,7 +36,7 @@ class CRMCustomerRegisterFormController: UITableViewController {
         }
         self.lblCityMediaType.text = info;
         self.lblCityMediaType.numberOfLines = 0;
-        self.mediaTypeCell.frame.size.height = CGFloat( cellHeight);
+        self.mediaTypeCell.frame.size.height = CGFloat(cellHeight + 50);
     }
 
     @IBAction func btnMediaTypeClick(sender: AnyObject) {
