@@ -150,16 +150,13 @@ class CRMCustomerListController: UITableViewController,CRMCustomerSignViewContro
             self.performSegueWithIdentifier("segueCRMContractEdit", sender: self);
         }
         let saleLogAtion = UIAlertAction(title: "日志", style: UIAlertActionStyle.Default) { (action) -> Void in
-            
         }
         let deleteAction = UIAlertAction(title: "删除客户", style: UIAlertActionStyle.Destructive) { (action) -> Void in
             print("delete Customer");
         }
-        
         let cancelAction = UIAlertAction(title: "取消", style: UIAlertActionStyle.Cancel) { (action) -> Void in
             print("cancel");
         }
-        
         
         actionSheet.addAction(uploadAttAction);
         actionSheet.addAction(contractEditAction);
@@ -193,9 +190,13 @@ class CRMCustomerListController: UITableViewController,CRMCustomerSignViewContro
         else if segue.identifier == "segueCRMAttUpload"{
 //            let uploadCtrl = segue.destinationViewController as! CRMCustomerAttachmentUploadController;
         }
-        
-        
+        else if segue.identifier == "segueCRMRegister"{
+//            let navCtrl = segue.destinationViewController as! UINavigationController;
+//            let registerCtrl = navCtrl.topViewController as! CRMCustomerRegisterViewController;
+//            registerCtrl.delegate = self;
+        }
     }
+    
     override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
         return true;
     }

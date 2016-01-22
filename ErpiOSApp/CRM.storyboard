@@ -909,14 +909,20 @@
                             <constraint firstItem="pTp-9A-7HR" firstAttribute="leading" secondItem="TtM-ni-jDZ" secondAttribute="leading" id="q3F-B3-FPD"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="注册申请" id="4fS-Tj-5Fa"/>
+                    <navigationItem key="navigationItem" title="注册申请" id="4fS-Tj-5Fa">
+                        <barButtonItem key="leftBarButtonItem" title="客户列表" id="RIm-hR-jjn">
+                            <connections>
+                                <action selector="btnCustomerListClick:" destination="bnF-Z6-eeN" id="gp5-bl-Ug1"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <segue destination="WHS-mv-M4e" kind="show" identifier="segueCRMMediaType" id="O8f-du-kuW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gR2-Sx-4hD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2283" y="2420"/>
+            <point key="canvasLocation" x="3095" y="2420"/>
         </scene>
         <!--申请媒体类型-->
         <scene sceneID="9Ag-vo-d4y">
@@ -960,14 +966,14 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jo5-MM-PR3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2283" y="3308"/>
+            <point key="canvasLocation" x="3095" y="3334"/>
         </scene>
         <!--申请表单-->
         <scene sceneID="Xrd-1u-ya4">
             <objects>
                 <tableViewController title="申请表单" id="I2d-oT-Cg1" customClass="CRMCustomerRegisterFormController" customModule="ErpiOSApp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="G0n-A2-PRu">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="700"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="900"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
@@ -1070,7 +1076,7 @@
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="600" height="700"/>
+                    <size key="freeformSize" width="600" height="900"/>
                     <connections>
                         <outlet property="lblCityMediaType" destination="Lvf-7N-OuH" id="5g8-iC-cex"/>
                         <outlet property="mediaTypeCell" destination="Ws4-qs-m46" id="aUU-sr-ilk"/>
@@ -1078,7 +1084,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ed4-GY-zia" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3083" y="2420"/>
+            <point key="canvasLocation" x="3895" y="2420"/>
         </scene>
         <!--客户列表-->
         <scene sceneID="Bt0-1E-geR">
@@ -1239,7 +1245,7 @@
                         <segue destination="KZV-o7-TEF" kind="showDetail" identifier="segueCustomerDetail" id="UPD-hH-vZJ"/>
                         <segue destination="g4s-8G-Fwq" kind="show" identifier="segueCRMContractEdit" id="Dgi-ee-DKQ"/>
                         <segue destination="Xjr-L0-nWt" kind="show" identifier="segueCRMAttUpload" id="ZfV-iV-mWf"/>
-                        <segue destination="bnF-Z6-eeN" kind="show" identifier="segueCRMRegister" id="MG1-G3-uUc"/>
+                        <segue destination="qPC-Sg-vPV" kind="show" identifier="segueCRMRegister" id="MG1-G3-uUc"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vMM-WJ-Si2" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1271,6 +1277,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="i8s-Co-Lge" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1383" y="1312"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="oCK-e1-6FK">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="qPC-Sg-vPV" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bLa-Zb-swy">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="bnF-Z6-eeN" kind="relationship" relationship="rootViewController" id="BSJ-WC-U7K"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eEx-mX-eIs" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2283" y="2420"/>
         </scene>
     </scenes>
     <resources>

@@ -8,8 +8,9 @@
 
 import UIKit
 
-class CRMCustomerRegisterViewController: UIViewController,CRMCustomerRegisterFormControllerDelegate,CRMRegisterMediaTypeControllerDelegate {
 
+class CRMCustomerRegisterViewController: UIViewController,CRMCustomerRegisterFormControllerDelegate,CRMRegisterMediaTypeControllerDelegate {
+    
     var customerRegisterFormCtrl:CRMCustomerRegisterFormController!;
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +23,10 @@ class CRMCustomerRegisterViewController: UIViewController,CRMCustomerRegisterFor
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func btnCustomerListClick(sender: AnyObject) {
+//        delegate?.backToCustomerList(self);
+        self.dismissViewControllerAnimated(true, completion: nil);
+    }
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "segueCRMCustomerRegisterForm"{
